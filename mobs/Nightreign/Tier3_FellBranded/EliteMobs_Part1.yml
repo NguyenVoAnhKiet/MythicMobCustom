@@ -1,34 +1,4 @@
-SkeletalDarkKnight:
-  Type: WITHER_SKELETON
-  Display: "&dSkeletal Dark Knight"
-  Health: 150
-  Damage: 8
-  Skills:
-    - message{cooldown=20;m="<mob.name>&f<&co> My blade will reap your soul!"} @PlayersInRadius{r=40} ~onCombat >0 0.2
-    - message{m="<mob.name>&f<&co> You're no match for me, <trigger.name>!"} @PlayersInRadius{r=40} ~onKillPlayer >0 1
-    - skill{s=SmashAttackElite} @Target >0 0.2
-    - skill{s=PullElite} @PIR{r=40} >0 0.2
-  #    - skill{s=SuperChargeDeathElite} @ThreatTablePlayers ~onDeath
-  Equipment:
-    - SkeletalDarkKnightHelm:4
-    - iron_chestplate:3
-    - iron_leggings:2
-    - FrostWalkers:1
-    - SkeletalDarkKnightSword:0
-  Drops:
-    - SkeletalDarkKnightSword 1 0.01
-    - SkeletalDarkKnightHelm 1 0.01
-    - gold_ingot 8-16
-    - EliteDrops 1 1
-    - EliteMeleeDrops 1 0.01
-    - VeteranMeleeDrops 1 0.02
-  Options:
-    AlwaysShowName: true
-    MovementSpeed: 0.25
-    FollowRange: 50
-    PreventOtherDrops: false
-  Modules:
-    ThreatTable: true
+
 Lich:
   Type: ZOMBIE
   Display: "&dLich"

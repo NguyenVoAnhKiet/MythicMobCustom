@@ -1,6 +1,6 @@
-Dretch:
+DretchT3:
   Type: PIGZOMBIE
-  Display: "&dDretch"
+  Display: "&dDretch [Tier 3]"
   Health: 150
   Damage: 10
   Equipment:
@@ -20,12 +20,12 @@ Dretch:
     - skill{s=BleedingVeteran} ~onAttack 0.2
     - skill{s=CrippleElite} @PIR{r=40} >0 0.2
     - skill{s=PullElite} @PIR{r=40} >0 0.2
-  #    - skill{s=SuperChargeDeathElite} @ThreatTablePlayers ~onDeath
   Modules:
     ThreatTable: true
-Banshee:
+
+BansheeT3:
   Type: VEX
-  Display: "&dBanshee"
+  Display: "&dBanshee [Tier 3]"
   Health: 150
   Damage: 10
   Equipment:
@@ -43,35 +43,12 @@ Banshee:
     - skill{s=BleedingElite} ~onAttack 0.1
     - skill{s=WailElite} @Target >0 0.1
     - skill{s=CorruptingTouchElite} @PIR{r=40} >0 0.2
-  #    - skill{s=SuperChargeDeathElite} @ThreatTablePlayers ~onDeath
   Modules:
     ThreatTable: true
-BouncySlime8:
-  Type: SLIME
-  Display: "&dParticularly Bouncy Slime"
-  Health: 75
-  Damage: 10
-  Drops:
-    - EliteDrops
-    - EliteMeleeDrops 1 0.01
-    - VeteranMeleeDrops 1 0.02
-  Options:
-    AlwaysShowName: true
-    FollowRange: 50
-    MovementSpeed: 0.3
-    PreventOtherDrops: false
-    PreventItemPickup: true
-    Size: 8
-    PreventSlimeSplit: true
-  Skills:
-    - skill{s=JumpSmashElite} @PIR{r=40} ~onAttack 0.5
-    - skill{s=JumpSmashElite} @PIR{r=40} >0 0.5
-    - skill{s=SlimeSummon7} ~onDeath 1
-  DamageModifiers:
-    - FALL 0
-GhastPhantom:
+
+GhastPhantomT3:
   Type: GHAST
-  Display: "&dGhastly Phantom"
+  Display: "&dGhastly Phantom [Tier 3]"
   Health: 150
   Damage: 12
   Drops:
@@ -89,7 +66,6 @@ GhastPhantom:
     - skill{s=SummonGhastsElite} >0 0.2
     - skill{s=ReTeleport} @self ~onTimer:10
     - shootfireball{y=4;v=10;i=true;ft=200;small=false;playsound=true} @Target ~onTimer:120
-  #    - skill{s=SuperChargeDeathElite} @ThreatTablePlayers ~onDeath
   Modules:
     ThreatTable: true
   DamageModifiers:
@@ -99,9 +75,10 @@ GhastPhantom:
     - SUFFOCATION 0
     - LAVA 0
     - FIRE 0
-Inferno:
+
+InfernoT3:
   Type: BLAZE
-  Display: "&dInferno"
+  Display: "&dInferno [Tier 3]"
   Health: 150
   Damage: 10
   Drops:
@@ -119,7 +96,6 @@ Inferno:
     - skill{s=SummonBlazesElite} >0 0.2
     - skill{s=ReTeleport} @self ~onTimer:10
     - shootfireball{y=4;v=10;i=true;ft=200;small=true;playsound=true} @Target ~onTimer:120
-  #    - skill{s=SuperChargeDeathElite} @ThreatTablePlayers ~onDeath
   Modules:
     ThreatTable: true
   DamageModifiers:
@@ -129,9 +105,10 @@ Inferno:
     - SUFFOCATION 0
     - LAVA 0
     - FIRE 0
-Arachnid:
+
+ArachnidT3:
   Type: CAVE_SPIDER
-  Display: "&dArachnid"
+  Display: "&dArachnid [Tier 3]"
   Health: 200
   Damage: 10
   Drops:
@@ -147,6 +124,5 @@ Arachnid:
     - skill{s=CrippleElite} @PIR{r=40} >0 0.2
     - skill{s=PullElite} @PIR{r=40} >0 0.2
     - skill{s=VanishElite} >0 0.2
-  #    - skill{s=SuperChargeDeathElite} @ThreatTablePlayers ~onDeath
   Modules:
     ThreatTable: true

@@ -1,0 +1,54 @@
+SkeletalDarkKnightT2:
+  Type: WITHER_SKELETON
+  Display: "&dSkeletal Dark Knight [Tier 2]"
+  Health: 150
+  Damage: 8
+  Skills:
+    - message{cooldown=20;m="<mob.name>&f<&co> My blade will reap your soul!"} @PlayersInRadius{r=40} ~onCombat >0 0.2
+    - message{m="<mob.name>&f<&co> You're no match for me, <trigger.name>!"} @PlayersInRadius{r=40} ~onKillPlayer >0 1
+    - skill{s=SmashAttackElite} @Target >0 0.2
+    - skill{s=PullElite} @PIR{r=40} >0 0.2
+  Equipment:
+    - SkeletalDarkKnightHelm:4
+    - iron_chestplate:3
+    - iron_leggings:2
+    - FrostWalkers:1
+    - SkeletalDarkKnightSword:0
+  Drops:
+    - SkeletalDarkKnightSword 1 0.01
+    - SkeletalDarkKnightHelm 1 0.01
+    - gold_ingot 8-16
+    - EliteDrops 1 1
+    - EliteMeleeDrops 1 0.01
+    - VeteranMeleeDrops 1 0.02
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.25
+    FollowRange: 50
+    PreventOtherDrops: false
+  Modules:
+    ThreatTable: true
+
+BouncySlimeT2:
+  Type: SLIME
+  Display: "&dParticularly Bouncy Slime [Tier 2]"
+  Health: 75
+  Damage: 10
+  Drops:
+    - EliteDrops
+    - EliteMeleeDrops 1 0.01
+    - VeteranMeleeDrops 1 0.02
+  Options:
+    AlwaysShowName: true
+    FollowRange: 50
+    MovementSpeed: 0.3
+    PreventOtherDrops: false
+    PreventItemPickup: true
+    Size: 8
+    PreventSlimeSplit: true
+  Skills:
+    - skill{s=JumpSmashElite} @PIR{r=40} ~onAttack 0.5
+    - skill{s=JumpSmashElite} @PIR{r=40} >0 0.5
+    - skill{s=SlimeSummon7} ~onDeath 1
+  DamageModifiers:
+    - FALL 0
