@@ -390,3 +390,102 @@ QuestVeteranRangedDrops:
     - ImbuedShovel 1 0.002
     - ImbuedHoe 1 0.002
     - ImbuedFishingRod 1 0.002
+
+# --- Nightreign Tier Drops ---
+
+# Special Mobs (Mob Đặc Biệt) - Resource Mobs
+SpecialMobDrop:
+  Conditions:
+    - playerwithin 50
+  MinItems: 1
+  MaxItems: 3
+  Drops:
+    - gold_ingot 8-16 1 # From SkeletalRogueDrops
+    - iron_ingot 1-3 1 # From LesserWightDrops
+    - ender_pearl 8 1 # From LesserShadeDrops
+    - money 1-50 1
+    - redstone 32-64 1
+    - lapis_lazuli 1-64 0.5
+    - exp 50-100 0.8
+
+# Tier 1 (Vagrant) - Basic Drops
+Tier1MobDrop:
+  Conditions:
+    - playerwithin 40
+  Drops:
+    - exp 15 1 # From ZombieDrops/basic mobs
+    - money 1 1
+    - rotten_flesh 0-6 1
+    - bone 0-6 0.5
+    - SmallRedstoneCache 1 0.05
+  DropsPerLevel:
+    - exp 10 1
+
+# Tier 2 (Grave-Tainted) - Better Equipment
+Tier2MobDrop:
+  Conditions:
+    - playerwithin 40
+  Drops:
+    - exp 150 1 # From VeteranDrops
+    - money 25 1
+    - iron_ingot 0-2 0.5
+    - SmallRedstoneCache 1 0.1
+    - RedstoneCache 1 0.05
+    - ImbuedSword 1 0.002 # From VeteranMeleeDrops
+    - ImbuedBow 1 0.002 # From VeteranRangedDrops
+  DropsPerLevel:
+    - exp 10 1
+
+# Tier 3 (Fell-Branded) - Elite Equipment
+Tier3MobDrop:
+  Conditions:
+    - playerwithin 40
+  Drops:
+    - exp 500-1500 1 # From EliteDrops
+    - money 50 1
+    - diamond 1-2 1
+    - RedstoneCache 1 0.15
+    - BurnishedSword 1 0.002 # From EliteMeleeDrops
+    - BurnishedBow 1 0.002 # From EliteRangedDrops
+    - BountifulBlade 1 0.002
+    - WitheringBlade 1 0.002
+  DropsPerLevel:
+    - exp 50 1
+
+# Tier 4 (Crucible-Forged) - Champion Equipment
+Tier4MobDrop:
+  Conditions:
+    - playerwithin 40
+  MaxItems: 3
+  Drops:
+    - exp 2500-7500 1 # From ChampionDrops
+    - money 250-2500 1
+    - gold_ingot 32-64 1
+    - diamond 5-10 1
+    - redstone 32-64 1
+    - RedstoneCache 1-2 0.3
+    - EmblazonedSword 1 0.002 # From ChampionMeleeDrops
+    - EmblazonedBow 1 0.002 # From ChampionRangedDrops
+  DropsPerLevel:
+    - exp 100 1
+
+# Tier 5 (Night-Revenant) - Ultimate Drops
+Tier5MobDrop:
+  Conditions:
+    - playerwithin 50
+  MinItems: 2
+  MaxItems: 4
+  Drops:
+    - exp 5000-10000 1
+    - money 1000-5000 1
+    - diamond_block 1-2 0.7
+    - emerald_block 1-2 0.7
+    - RedstoneCache 2-3 0.5
+    - UmbraSword 1 0.01 # Special Night-Revenant gear
+    - UmbraBow 1 0.01
+    - UmbraHelm 1 0.01
+    - UmbraChest 1 0.01
+    - UmbraLegs 1 0.01
+    - UmbraBoots 1 0.01
+  DropsPerLevel:
+    - exp 200 1

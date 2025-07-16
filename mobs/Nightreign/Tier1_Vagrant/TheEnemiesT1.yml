@@ -15,7 +15,7 @@ Vagrant_Grunt:
     PreventOtherDrops: true
     PreventItemPickup: true
   Drops:
-    - exp 5-8
+    - Tier1MobDrop
 
 Vagrant_Rusher:
   Type: BABY_ZOMBIE
@@ -30,7 +30,7 @@ Vagrant_Rusher:
   Skills:
     - skill{s=RushVeteran} @target ~onTimer:100 # Sử dụng skill lao tới có sẵn
   Drops:
-    - exp 8-12
+    - Tier1MobDrop
 
 Vagrant_Rockthrower:
   Type: BABY_ZOMBIE
@@ -50,4 +50,4 @@ Vagrant_Rockthrower:
   Skills:
     - skill{s=RockTossVeteran} @target ~onTimer:40 # Sử dụng skill ném đá có sẵn
   Drops:
-    - exp 8-12
+    - Tier1MobDrop

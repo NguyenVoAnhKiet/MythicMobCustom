@@ -20,8 +20,7 @@ FellBranded_Ogre:
     - skill{s=CrushingBlowVeteran} @target ~onAttack 0.3
     - skill{s=StompVeteran} @PIR{r=5} ~onTimer:240
   Drops:
-    - exp 100-150
-    - IRON_INGOT 1-4
+    - Tier3MobDrop
 
 FellBranded_Deathknight:
   Type: WITHER_SKELETON
@@ -39,9 +38,7 @@ FellBranded_Deathknight:
     - skill{s=SmashAttackElite} @target ~onAttack 0.2
     - skill{s=PullElite} @PIR{r=15} ~onTimer:200 0.5
   Drops:
-    - exp 150-200
-    - BONE 2-5
-    - COAL 1-3
+    - Tier3MobDrop
 
 FellBranded_Sharpshooter:
   Type: SKELETON
@@ -60,8 +57,7 @@ FellBranded_Sharpshooter:
     - skill{s=ExplodingArrowElite} @target ~onTimer:160 0.4
     - shoot{type=ARROW;velocity=15;damage=10} @Target ~onTimer:60
   Drops:
-    - exp 120-160
-    - ARROW 5-10
+    - Tier3MobDrop
 
 FellBranded_Stalker:
   Type: CAVE_SPIDER
@@ -75,6 +71,4 @@ FellBranded_Stalker:
     - skill{s=ShadowstepElite} @target ~onDamaged 0.3 # Dịch chuyển khi bị đánh
     - skill{s=VanishElite} @self ~onTimer:300 0.5 # Tàng hình
   Drops:
-    - exp 130-180
-    - STRING 2-4
-    - SPIDER_EYE 1-2
+    - Tier3MobDrop

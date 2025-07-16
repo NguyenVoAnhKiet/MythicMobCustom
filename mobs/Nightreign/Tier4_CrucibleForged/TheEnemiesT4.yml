@@ -23,9 +23,7 @@ CrucibleForged_Lich:
     - skill{s=SummonLichMinionsElite} @self ~onTimer:400 1 # Triệu hồi lính
     - skill{s=CrippleElite} @PIR{r=20} ~onTimer:200 0.6
   Drops:
-    - exp 1000
-    - DIAMOND 1-2
-    - EMERALD 3-5
+    - Tier4MobDrop
 
 CrucibleForged_Bloodwitch:
   Type: WITCH
@@ -43,9 +41,7 @@ CrucibleForged_Bloodwitch:
     - skill{s=RallyElite} @MobsInRadius{r=15;t=FellBranded_*} ~onTimer:400 1 # Buff cho đồng đội
     - teleport{spreadh=10;spreadv=3} @self ~onDamaged <50% 0.6 # Dịch chuyển khi dưới 50% máu
   Drops:
-    - exp 1000
-    - GHAST_TEAR 1-3
-    - GLOWSTONE_DUST 5-10
+    - Tier4MobDrop
 
 CrucibleForged_Pyromancer:
   Type: VINDICATOR
@@ -68,5 +64,4 @@ CrucibleForged_Pyromancer:
     - skill{s=HeatwaveElite} @PIR{r=15} ~onTimer:200 >0 0.5
     - skill{s=MeteorShowerElite} @PIR{r=20} ~onTimer:400 >0 0.5
   Drops:
-    - exp 800
-    - BLAZE_POWDER 5-10
+    - Tier4MobDrop

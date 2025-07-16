@@ -20,8 +20,4 @@ Hoarding_Goblin:
     - 1 fleeplayers
     - 2 randomstroll
   Drops:
-    # Giữ lại drop gốc của các goblin, bạn có thể tạo DropTable riêng
-    - money 1-50 1
-    - redstone 1-64 0.5
-    - LapisLazuli 1-64 0.5
-    - exp 50-100 0.8
+    - SpecialMobDrop

@@ -19,8 +19,7 @@ GraveTainted_Soldier:
   Skills:
     - skill{s=HamstringElite} @target ~onAttack 0.15 # Có cơ hội làm chậm
   Drops:
-    - exp 20-30
-    - ROTTEN_FLESH 1-3
+    - Tier2MobDrop
 
 GraveTainted_Guardian:
   Type: GUARDIAN
@@ -30,5 +29,4 @@ GraveTainted_Guardian:
   Options:
     AlwaysShowName: true
   Drops:
-    - exp 30-40
-    - PRISMARINE_SHARD 1-2
+    - Tier2MobDrop
