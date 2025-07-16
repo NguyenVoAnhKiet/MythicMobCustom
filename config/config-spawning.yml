@@ -3,10 +3,18 @@ Configuration:
     DisableCommandSaving: false
   RandomSpawning:
     DisableVanillaSpawns: false
-    GenerateSpawnPoints: false
+    GenerateSpawnPoints: true
+    MaxMobsPerChunk: 80
     SpawnRadiusPerPlayer: 64
     SpawnRadiusPerPlayerMin: 12
-    SpawnRadiusPerPlayerY: 16
+    SpawnRadiusPerPlayerY: 32
+    DespawnLazyRandomMobs: true
+    PointsPerSecond:
+      Land: 10
+      Air: 1
+      Sea: 0
+      Lava: 0
+      Ground: 1
     PlayerClusterDistance: 24.0
     LimitMultiplier: 1.2
     LocalGroupMultiplier: 0.1

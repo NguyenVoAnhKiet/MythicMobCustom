@@ -1,5 +1,38 @@
 Configuration:
+  Version: 2.3
   General:
     Language: en-us
     ThreadPoolSize: -1
     UseVirtualThreads: false
+    AllowMetrics: true
+    CheckForUpdates: true
+    CompatibilityMode: false
+    DebugLevel: 0
+    ErrorLogging: true
+    UseVolatileFeatures: true
+  Clock:
+    ClockInterval: 5
+    SaveInterval: 5
+    SpawnsInterval: 2
+    ScannerInterval: 10
+    CleanupInterval: 600
+  Components:
+    CustomSpawners: true
+    RandomSpawning: true
+  Compatibility:
+    Heroes:
+      Enabled: true
+      ShowXPMessage: true
+      XPMessageFormat: You receive <drops.xp> experience for slaying <mob.name>
+    McMMO:
+      Enabled: true
+      ShowXPMessage: true
+      XPMessageFormat: You receive <drops.xp> experience for slaying <mob.name>
+    SkillAPI:
+      Enabled: true
+      ShowXPMessage: true
+      XPMessageFormat: You receive <drops.xp> experience for slaying <mob.name>
+    Vault:
+      Enabled: true
+      ShowMoneyMessage: true
+      MoneyMessageFormat: <mob.name> dropped <drops.money> gold!
