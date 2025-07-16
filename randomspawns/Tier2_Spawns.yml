@@ -1,0 +1,34 @@
+# Tier2_Spawns.yml
+# Cấu hình spawn cho Grave-Tainted Mobs (Tier 2)
+
+GraveTaintedSpawns_Overworld:
+  Type: GraveTainted_Soldier,GraveTainted_Guardian
+  Worlds: prosperus
+  Chance: 0.05
+  Action: REPLACE
+  Conditions:
+    - distancefromspawn{distance=>1000} true
+    - outside true
+    - lightlevelbelow 8
+    - onblock STATIONARY_WATER,WATER false
+
+GraveTaintedSpawns_Heavens:
+  Type: GraveTainted_Soldier,GraveTainted_Guardian
+  Worlds: heavens
+  Chance: 0.08
+  Action: REPLACE
+  Conditions:
+    - outside true
+    - lightlevelbelow 8
+
+GraveTaintedSpawns_Nether:
+  Type: GraveTainted_Soldier
+  Worlds: prosperus_nether
+  Chance: 0.06
+  Action: REPLACE
+
+GraveTaintedSpawns_End:
+  Type: GraveTainted_Guardian
+  Worlds: prosperus_the_end
+  Chance: 0.07
+  Action: REPLACE

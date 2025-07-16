@@ -1,0 +1,20 @@
+# Special_Skills.yml
+# Kỹ năng cho Special Mobs (Resource Mobs)
+
+# Goblin Escape Skills
+GoblinEscape:
+  Cooldown: 15
+  Skills:
+    - potion{type=SPEED;duration=100;level=2} @self
+    - effect:particles{p=smoke;amount=20} @self
+    - sound{s=entity.enderman.teleport;volume=1} @self
+    - runaigoalselector{goal=fleeplayers} @self
+
+# Goblin Resource Skills
+GoblinLoot:
+  Cooldown: 30
+  Skills:
+    - effect:particles{p=happyvillager;amount=10} @self
+    - dropitem{item=REDSTONE;amount=1-3} @self
+    - dropitem{item=LAPIS_LAZULI;amount=1-3} @self ~0.5
+    - message{m="&aThe goblin drops some resources!"} @PlayersInRadius{r=10}

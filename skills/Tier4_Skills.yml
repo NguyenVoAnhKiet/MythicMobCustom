@@ -1,0 +1,63 @@
+# Tier4_Skills.yml
+# Kỹ năng cho Crucible-Forged Mobs (Tier 4)
+
+# Lich Skills
+SoulDrain:
+  Cooldown: 25
+  Skills:
+    - damage{amount=6;type=MAGIC} @target
+    - heal{amount=6} @self
+    - effect:particles{p=soul;amount=20} @target
+    - sound{s=entity.wither.spawn;volume=0.5} @self
+
+SummonMinions:
+  Cooldown: 45
+  Skills:
+    - summon{type=ZOMBIE;amount=3;radius=3} @self
+    - effect:particles{p=soul_fire_flame;amount=30} @self
+    - sound{s=entity.evoker.cast_spell;volume=1} @self
+
+# Bloodwitch Skills
+BloodCurse:
+  Cooldown: 30
+  Skills:
+    - potion{type=POISON;duration=100;level=2} @target
+    - potion{type=WEAKNESS;duration=100;level=1} @target
+    - effect:particles{p=crimson_spore;amount=20} @target
+    - sound{s=entity.witch.drink;volume=1} @self
+
+# Pyromancer Skills
+MeteorShower:
+  Cooldown: 40
+  Skills:
+    - summon{m=MeteorPointer;a=15;r=30}
+
+MeteorPointerSpawn:
+  Skills:
+    - potion{type=INVISIBILITY;d=2000;l=1} @self
+    - delay 200
+    - skill{s=MeteorPointerFinish}
+
+MeteorPointerFinish:
+  Skills:
+    - projectile{onTick=MeteorTick;onEnd=MeteorEnd;v=30;i=1;hR=2;vR=2;syo=75;sfo=20;mr=1000;d=500;sE=false} @Self
+    - delay 500
+    - remove{m=MeteorPointer} @Self
+
+MeteorTick:
+  Skills:
+    - effect:particles{p=flame;a=30;vS=1.5;hS=1.5} @Origin
+    - effect:particles{p=largesmoke;a=15;vS=1;hS=1} @Origin
+    - effect:particles{p=largeexplosion;a=3;vS=0.75;hS=0.75} @Origin
+
+MeteorEnd:
+  Skills:
+    - explosion{blockdamage=false;fire=true;yield=5} @Origin
+    - remove{m=MeteorPointer} @Self
+
+Inferno:
+  Cooldown: 25
+  Skills:
+    - effect:particles{p=flame;amount=50;radius=5} @self
+    - damage{amount=8;type=FIRE;radius=5} @PlayersInRadius{r=5}
+    - burn{duration=100} @PlayersInRadius{r=5}

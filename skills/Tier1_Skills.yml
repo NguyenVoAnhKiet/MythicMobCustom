@@ -1,0 +1,33 @@
+# Tier1_Skills.yml
+# Kỹ năng cho Vagrant Mobs (Tier 1)
+
+# Basic Attack Skills
+VagrantSlash:
+  Cooldown: 10
+  Skills:
+    - damage{amount=4} @target
+    - effect:particles{p=crit;amount=5} @target
+
+# Rock Throw Skills
+RockThrow:
+  Cooldown: 15
+  Skills:
+    - projectile{onTick=RockThrowTick;onHit=RockThrowHit;v=15;i=1;hR=1;vR=1} @target
+    - sound{s=entity.snowball.throw;volume=1} @self
+
+RockThrowTick:
+  Skills:
+    - effect:particles{p=block_crack;amount=1;material=COBBLESTONE} @origin
+
+RockThrowHit:
+  Skills:
+    - damage{amount=3} @target
+    - effect:particles{p=block_crack;amount=10;material=COBBLESTONE} @target
+    - sound{s=block.stone.break;volume=1} @target
+
+# Rush Skills
+VagrantRush:
+  Cooldown: 20
+  Skills:
+    - potion{type=SPEED;duration=60;level=1} @self
+    - message{m="&7The vagrant rushes at you!"} @target

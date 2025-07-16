@@ -1,0 +1,69 @@
+# Tier5_Skills.yml
+# Kỹ năng cho Night-Revenant Mobs (Tier 5)
+
+# Umbra Skills
+UmbraSlash:
+  Cooldown: 15
+  Skills:
+    - damage{amount=12;type=MAGIC} @target
+    - effect:particles{p=reverse_portal;amount=30} @target
+    - sound{s=entity.wither.shoot;volume=1} @self
+
+DarkEruption:
+  Cooldown: 30
+  Skills:
+    - effect:particles{p=reverse_portal;amount=100;radius=8} @self
+    - damage{amount=10;type=MAGIC;radius=8} @PlayersInRadius{r=8}
+    - throw{velocity=1;velocityY=0.8;radius=8} @PlayersInRadius{r=8}
+    - sound{s=entity.wither.spawn;volume=1} @self
+
+ShadowRealm:
+  Cooldown: 60
+  Conditions:
+    - health{h=0.0to0.5} true
+  Skills:
+    - potion{type=DAMAGE_RESISTANCE;duration=200;level=4} @self
+    - effect:particles{p=portal;amount=200} @self
+    - message{m="<mob.name>&5: Witness true darkness!"} @PlayersInRadius{r=30}
+    - summon{type=WITHER_SKELETON;amount=5;radius=5} @self
+    - sound{s=entity.wither.spawn;volume=1} @self
+
+# Toxus Skills
+ToxicCloud:
+  Cooldown: 20
+  Skills:
+    - effect:particles{p=spell_mob;color=#00FF00;amount=50;radius=5} @self
+    - potion{type=POISON;duration=100;level=2;radius=5} @PlayersInRadius{r=5}
+    - damage{amount=6;type=MAGIC;radius=5} @PlayersInRadius{r=5}
+
+VenomBurst:
+  Cooldown: 25
+  Skills:
+    - projectile{onTick=VenomTick;onHit=VenomHit;v=15;i=1;hR=1;vR=1;amount=8;spread=360} @target
+
+VenomTick:
+  Skills:
+    - effect:particles{p=spell_mob;color=#00FF00} @origin
+
+VenomHit:
+  Skills:
+    - damage{amount=8;type=MAGIC} @target
+    - potion{type=POISON;duration=100;level=2} @target
+    - potion{type=SLOW;duration=60;level=1} @target
+
+PlagueForm:
+  Cooldown: 60
+  Conditions:
+    - health{h=0.0to0.5} true
+  Skills:
+    - potion{type=SPEED;duration=200;level=2} @self
+    - potion{type=DAMAGE_RESISTANCE;duration=200;level=3} @self
+    - aura{auraName=plague;duration=200;radius=5;onTick=PlagueTick} @self
+    - message{m="<mob.name>&5: Feel the corruption!"} @PlayersInRadius{r=30}
+    - sound{s=entity.wither.spawn;volume=1} @self
+
+PlagueTick:
+  Skills:
+    - effect:particles{p=spell_mob;color=#00FF00;amount=10} @origin
+    - damage{amount=2;type=MAGIC} @PlayersInRadius{r=5}
+    - potion{type=POISON;duration=40;level=1} @PlayersInRadius{r=5}

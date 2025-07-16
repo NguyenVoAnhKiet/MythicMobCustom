@@ -1,0 +1,26 @@
+# Tier2_Skills.yml
+# Kỹ năng cho Grave-Tainted Mobs (Tier 2)
+
+# Soldier Skills
+GraveTaintedCleave:
+  Cooldown: 15
+  Skills:
+    - damage{amount=6;radius=3} @target
+    - effect:particles{p=sweep_attack;amount=10} @target
+    - sound{s=entity.player.attack.sweep;volume=1} @self
+
+# Guardian Skills
+GraveTaintedBeam:
+  Cooldown: 20
+  Skills:
+    - raycast{particle=endrod;range=10;ignorePassable=true} @target
+    - damage{amount=5} @target
+    - effect:particles{p=endrod;amount=20} @target
+    - sound{s=entity.guardian.attack;volume=1} @self
+
+# Shared Skills
+GraveTaintedArmor:
+  Trigger: "DAMAGED"
+  Skills:
+    - potion{type=DAMAGE_RESISTANCE;duration=60;level=1} @self ~0.3
+    - effect:particles{p=barrier;amount=5} @self

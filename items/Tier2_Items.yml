@@ -1,0 +1,81 @@
+# Tier2_Items.yml
+# Vật phẩm Tier 2 - Grave Tainted (Nhiễm Mộ)
+
+# Weapons
+GraveTaintedSword:
+  Id: Iron_Sword
+  Display: "&8Grave Tainted Blade"
+  Lore:
+    - "&8A blade corrupted by dark energies"
+  Enchantments:
+    - DAMAGE_ALL:2
+    - DURABILITY:1
+  Attributes:
+    MainHand:
+      Damage: 7
+      AttackSpeed: -2.4
+
+GraveTaintedBow:
+  Id: Bow
+  Display: "&8Grave Tainted Bow"
+  Lore:
+    - "&8A bow infused with dark magic"
+  Enchantments:
+    - ARROW_DAMAGE:2
+    - DURABILITY:1
+  Attributes:
+    MainHand:
+      Damage: 3
+
+# Armor
+GraveTaintedHelm:
+  Id: chainmail_helmet
+  Display: "&8Grave Tainted Helm"
+  Lore:
+    - "&8Armor tainted by dark energies"
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:2
+    - DURABILITY:1
+  Attributes:
+    Head:
+      Health: 2
+      Armor: 2
+
+GraveTaintedChest:
+  Id: chainmail_chestplate
+  Display: "&8Grave Tainted Chestplate"
+  Lore:
+    - "&8Armor tainted by dark energies"
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:2
+    - DURABILITY:1
+  Attributes:
+    Chest:
+      Health: 3
+      Armor: 3
+
+GraveTaintedLegs:
+  Id: chainmail_leggings
+  Display: "&8Grave Tainted Leggings"
+  Lore:
+    - "&8Armor tainted by dark energies"
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:2
+    - DURABILITY:1
+  Attributes:
+    Legs:
+      Health: 2
+      Armor: 2
+
+GraveTaintedBoots:
+  Id: chainmail_boots
+  Display: "&8Grave Tainted Boots"
+  Lore:
+    - "&8Armor tainted by dark energies"
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:2
+    - DURABILITY:1
+  Attributes:
+    Feet:
+      Health: 2
+      Armor: 2

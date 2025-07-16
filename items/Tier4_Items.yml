@@ -1,0 +1,91 @@
+# Tier4_Items.yml
+# Vật phẩm Tier 4 - Crucible Forged (Luyện Trong Chảo)
+
+# Weapons
+CrucibleSword:
+  Id: diamond_sword
+  Display: "&5Crucible-Forged Blade"
+  Lore:
+    - "&5A blade tempered in magical flames"
+  Enchantments:
+    - DAMAGE_ALL:4
+    - DURABILITY:3
+    - FIRE_ASPECT:2
+    - SWEEPING_EDGE:2
+  Attributes:
+    MainHand:
+      Damage: 9
+      AttackSpeed: -2.4
+
+CrucibleBow:
+  Id: Bow
+  Display: "&5Crucible-Forged Bow"
+  Lore:
+    - "&5A bow tempered in magical flames"
+  Enchantments:
+    - ARROW_DAMAGE:4
+    - DURABILITY:3
+    - ARROW_FIRE:2
+    - ARROW_KNOCKBACK:1
+  Attributes:
+    MainHand:
+      Damage: 5
+
+# Armor
+CrucibleHelm:
+  Id: diamond_helmet
+  Display: "&5Crucible-Forged Helm"
+  Lore:
+    - "&5Armor tempered in magical flames"
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:4
+    - DURABILITY:3
+    - OXYGEN:2
+    - WATER_WORKER:1
+  Attributes:
+    Head:
+      Health: 4
+      Armor: 4
+
+CrucibleChest:
+  Id: diamond_chestplate
+  Display: "&5Crucible-Forged Chestplate"
+  Lore:
+    - "&5Armor tempered in magical flames"
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:4
+    - DURABILITY:3
+    - THORNS:2
+  Attributes:
+    Chest:
+      Health: 5
+      Armor: 5
+
+CrucibleLegs:
+  Id: diamond_leggings
+  Display: "&5Crucible-Forged Leggings"
+  Lore:
+    - "&5Armor tempered in magical flames"
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:4
+    - DURABILITY:3
+    - THORNS:1
+  Attributes:
+    Legs:
+      Health: 4
+      Armor: 4
+
+CrucibleBoots:
+  Id: diamond_boots
+  Display: "&5Crucible-Forged Boots"
+  Lore:
+    - "&5Armor tempered in magical flames"
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:4
+    - DURABILITY:3
+    - FEATHER_FALLING:2
+    - DEPTH_STRIDER:2
+  Attributes:
+    Feet:
+      Health: 4
+      Armor: 4

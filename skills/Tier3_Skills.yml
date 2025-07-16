@@ -1,0 +1,44 @@
+# Tier3_Skills.yml
+# Kỹ năng cho Fell-Branded Mobs (Tier 3)
+
+# Ogre Skills
+CrushingBlow:
+  Cooldown: 15
+  Skills:
+    - damage{amount=8} @target
+    - throw{velocity=1;velocityY=0.5} @target
+    - sound{s=entity.iron_golem.attack;volume=1} @self
+    - effect:particles{p=explosion;amount=10} @target
+
+# Deathknight Skills
+ShadowStrike:
+  Cooldown: 20
+  Skills:
+    - teleport{spread=2} @target
+    - damage{amount=6;type=MAGIC} @target
+    - effect:particles{p=smoke;amount=20} @self
+    - potion{type=WITHER;duration=60;level=1} @target
+
+# Sharpshooter Skills
+PiercingShot:
+  Cooldown: 25
+  Skills:
+    - projectile{onTick=PiercingShotTick;onHit=PiercingShotHit;v=20;i=1;hR=0.5;vR=0.5;piercing=true} @target
+    - sound{s=entity.arrow.shoot;volume=1} @self
+
+PiercingShotTick:
+  Skills:
+    - effect:particles{p=crit;amount=1} @origin
+
+PiercingShotHit:
+  Skills:
+    - damage{amount=5} @target
+    - potion{type=WEAKNESS;duration=40;level=1} @target
+
+# Stalker Skills
+Vanish:
+  Cooldown: 30
+  Skills:
+    - potion{type=INVISIBILITY;duration=100;level=1} @self
+    - effect:particles{p=portal;amount=30} @self
+    - sound{s=entity.enderman.teleport;volume=1} @self

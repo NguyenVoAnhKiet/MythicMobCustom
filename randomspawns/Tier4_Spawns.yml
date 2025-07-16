@@ -1,0 +1,45 @@
+# Tier4_Spawns.yml
+# Cấu hình spawn cho Crucible-Forged Mobs (Tier 4)
+
+CrucibleForgedSpawns_Overworld:
+  Type: CrucibleForged_Lich,CrucibleForged_Bloodwitch,CrucibleForged_Pyromancer
+  Worlds: prosperus
+  Chance: 0.005
+  Action: REPLACE
+  Conditions:
+    - distancefromspawn{distance=>3000} true
+    - outside true
+    - lightlevelbelow 4
+    - onblock STATIONARY_WATER,WATER false
+
+CrucibleForgedSpawns_Heavens:
+  Type: CrucibleForged_Lich,CrucibleForged_Bloodwitch,CrucibleForged_Pyromancer
+  Worlds: heavens
+  Chance: 0.01
+  Action: REPLACE
+  Conditions:
+    - outside true
+    - lightlevelbelow 4
+
+CrucibleForgedSpawns_Nether:
+  Type: CrucibleForged_Lich,CrucibleForged_Bloodwitch,CrucibleForged_Pyromancer
+  Worlds: prosperus_nether
+  Chance: 0.008
+  Action: REPLACE
+
+CrucibleForgedSpawns_End:
+  Type: CrucibleForged_Lich,CrucibleForged_Pyromancer
+  Worlds: prosperus_the_end
+  Chance: 0.009
+  Action: REPLACE
+  Conditions:
+    - lightlevelbelow 4
+
+CrucibleForgedSpawns_Avenfeld:
+  Type: CrucibleForged_Bloodwitch
+  Worlds: avenfeld
+  Chance: 0.007
+  Action: REPLACE
+  Conditions:
+    - outside true
+    - lightlevelbelow 4
