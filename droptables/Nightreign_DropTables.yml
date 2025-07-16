@@ -1,2 +1,392 @@
 # Nightreign_DropTables.yml
 # Chứa bảng vật phẩm rơi ra của hệ thống Nightreign
+
+# --- ArenaDrops.yml ---
+ArenaVeteranDrops:
+  Drops:
+    - exp 50 1
+    - SmallRedstoneCache 1 0.10
+  DropsPerLevel:
+    - exp 10 1
+ArenaEliteDrops:
+  Drops:
+    - exp 100-300 1
+    - SmallRedstoneCache 1 0.20
+    - RedstoneCache 1 0.10
+  DropsPerLevel:
+    - exp 50 1
+ArenaChampionDrops:
+  Drops:
+    - exp 500-2500 1
+    - exp 500-2500 0.75
+    - exp 500-2500 0.5
+    - exp 500-2500 0.25
+    - exp 500-2500 0.125
+    - RedstoneCache 16 1
+    - RedstoneCache 16 0.5
+    - RedstoneCache 16 0.25
+    - RedstoneCache 16 0.125
+  DropsPerLevel:
+    - exp 100 1
+
+# --- ChampionDrops.yml ---
+ChampionDrops:
+  Drops:
+    - gold_ingot 32-64 1
+    - gold_ingot 32-64 0.75
+    - gold_ingot 32-64 0.5
+    - gold_ingot 32-64 0.25
+    - gold_ingot 32-64 0.125
+    - diamond 5-10 1
+    - diamond 5-10 0.75
+    - diamond 5-10 0.5
+    - diamond 5-10 0.25
+    - diamond 5-10 0.125
+    - redstone 32-64 1
+    - redstone 32-64 1
+    - redstone 32-64 1
+    - redstone 32-64 1
+    - redstone 32-64 .5
+    - redstone 32-64 .5
+    - redstone 32-64 .5
+    - redstone 32-64 .5
+    - redstone 32-64 .25
+    - redstone 32-64 .25
+    - redstone 32-64 .25
+    - redstone 32-64 .25
+    - redstone 32-64 .125
+    - redstone 32-64 .125
+    - redstone 32-64 .125
+    - redstone 32-64 .125
+    - exp 2500-7500 1
+    - exp 2500-7500 0.75
+    - exp 2500-7500 0.5
+    - exp 2500-7500 0.25
+    - exp 2500-7500 0.125
+    - money 250-2500 1
+  DropsPerLevel:
+    - exp 100 1
+ChampionMeleeDrops:
+  TotalItems: 1
+  Drops:
+    - EmblazonedSword 1 0.002
+    - EmblazonedHelm 1 0.002
+    - EmblazonedChest 1 0.002
+    - EmblazonedLegs 1 0.002
+    - EmblazonedBoots 1 0.002
+    - EmblazonedShield 1 0.002
+    - EmblazonedAxe 1 0.002
+    - EmblazonedPickaxe 1 0.002
+    - EmblazonedShovel 1 0.002
+    - EmblazonedHoe 1 0.002
+    - EmblazonedFishingRod 1 0.002
+ChampionRangedDrops:
+  TotalItems: 1
+  Drops:
+    - EmblazonedHelm 1 0.002
+    - EmblazonedChest 1 0.002
+    - EmblazonedLegs 1 0.002
+    - EmblazonedBoots 1 0.002
+    - EmblazonedBow 1 0.002
+    - EmblazonedShield 1 0.002
+    - EmblazonedAxe 1 0.002
+    - EmblazonedPickaxe 1 0.002
+    - EmblazonedShovel 1 0.002
+    - EmblazonedHoe 1 0.002
+    - EmblazonedFishingRod 1 0.002
+
+# --- EliteDrops.yml ---
+EliteDrops:
+  Drops:
+    - diamond 1-2 1
+    - exp 500-1500 1
+    - money 50 1
+    - ender_portal_frame 1 0.02
+    - SmallRedstoneCache 1 0.20
+    - RedstoneCache 1 0.10
+  DropsPerLevel:
+    - exp 50 1
+EliteMeleeDrops:
+  TotalItems: 1
+  Drops:
+    - BurnishedSword 1 0.002
+    - BurnishedHelm 1 0.002
+    - BurnishedChest 1 0.002
+    - BurnishedLegs 1 0.002
+    - BurnishedBoots 1 0.002
+    - BurnishedShield 1 0.002
+    - BurnishedAxe 1 0.002
+    - BurnishedPickaxe 1 0.002
+    - BurnishedShovel 1 0.002
+    - BurnishedHoe 1 0.002
+    - BurnishedFishingRod 1 0.002
+    - BountifulBlade 1 0.002
+    - WitheringBlade 1 0.002
+EliteRangedDrops:
+  TotalItems: 1
+  Drops:
+    - BurnishedHelm 1 0.002
+    - BurnishedChest 1 0.002
+    - BurnishedLegs 1 0.002
+    - BurnishedBoots 1 0.002
+    - BurnishedBow 1 0.002
+    - BurnishedShield 1 0.002
+    - BurnishedAxe 1 0.002
+    - BurnishedPickaxe 1 0.002
+    - BurnishedShovel 1 0.002
+    - BurnishedHoe 1 0.002
+    - BurnishedFishingRod 1 0.002
+EliteMinionDrops:
+  Drops:
+    - exp 150
+    - money 15
+BloodWitchDrops:
+  MaxItems: 3
+  Drops:
+    - gold_ingot 8-16 1
+    - redstone 32-64 1
+    - redstone 32-64 1
+    - redstone 32-64 1
+    - redstone 32-64 1
+    - glass_bottle 1-4 0.5
+QuestEliteDrops:
+  Drops:
+    - diamond 1-2 1
+    - exp 500-1500 1
+    - money 50 1
+    - ender_portal_frame 1 0.02
+    - RedstoneCache 1 0.05
+QuestEliteMeleeDrops:
+  MaxItems: 1
+  Drops:
+    - BurnishedSword 1 0.002
+    - BurnishedHelm 1 0.002
+    - BurnishedChest 1 0.002
+    - BurnishedLegs 1 0.002
+    - BurnishedBoots 1 0.002
+    - BurnishedShield 1 0.002
+    - BurnishedAxe 1 0.002
+    - BurnishedPickaxe 1 0.002
+    - BurnishedShovel 1 0.002
+    - BurnishedHoe 1 0.002
+    - BurnishedFishingRod 1 0.002
+    - BountifulBlade 1 0.002
+    - WitheringBlade 1 0.002
+QuestEliteRangedDrops:
+  MaxItems: 1
+  Drops:
+    - BurnishedHelm 1 0.002
+    - BurnishedChest 1 0.002
+    - BurnishedLegs 1 0.002
+    - BurnishedBoots 1 0.002
+    - BurnishedBow 1 0.002
+    - BurnishedShield 1 0.002
+    - BurnishedAxe 1 0.002
+    - BurnishedPickaxe 1 0.002
+    - BurnishedShovel 1 0.002
+    - BurnishedHoe 1 0.002
+    - BurnishedFishingRod 1 0.002
+
+# --- ExampleDropTables.yml ---
+#
+# This example file shows you how to set up a basic drop table.
+# Drop tables can be used in both a mob's equipment and drops
+# to have multiple items tied to a single table.
+SkeletonKingDrops:
+  Conditions:
+    - playerwithin 40
+  Drops:
+    - KingsCrown 1 0.01
+    - 371:0 32-64 1
+    - exp 100
+    - heroesexp 200
+  DropsPerLevel:
+    - exp 10
+
+# --- VanillaDrops.yml ---
+BlazeDrops:
+  Drops:
+    - exp 30 1
+    - money 2 1
+    - blaze_rod 0-3 1
+    - glowstone_dust 0-6 1
+CaveSpiderDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - string 0-6 1
+    - spider_eye 0-3 1
+CreeperDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - sulphur 0-6 1
+EndermanDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - ender_pearl 0-3 1
+GuardianDrops:
+  Drops:
+    - exp 30 1
+    - money 2 1
+    - prismarine_shard 0-6 1
+    - raw_fish 0-3 0.4
+    - prismarine_crystals 0-3 0.4
+HuskDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - rotten_flesh 0-6 1
+MagmaCubeDrops:
+  Drops:
+    - exp 12 1
+    - magma_cream 0-3 1
+PigZombieDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - rotten_flesh 0-3 1
+    - gold_nugget 0-3 1
+SkeletonDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - arrow 0-6 1
+    - bone 0-6 1
+SlimeDrops:
+  Drops:
+    - exp 12 1
+    - money 1 1
+    - slime_ball 0-4 1
+SpiderDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - string 0-6 1
+    - spider_eye 0-3 1
+WitchDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - glass_bottle 0-6 0.125
+    - glowstone_dust 0-6 0.125
+    - sulphur 0-6 0.125
+    - redstone 0-6 0.125
+    - spider_eye 0-6 0.125
+    - sugar 0-6 0.125
+    - stick 0-6 0.25
+ZombieDrops:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - rotten_flesh 0-6 1
+
+# --- VeteranDrops.yml ---
+VeteranDrops:
+  Drops:
+    - exp 150 1
+    - money 25 1
+    - SmallRedstoneCache 1 0.10
+  DropsPerLevel:
+    - exp 10 1
+VeteranMeleeDrops:
+  TotalItems: 1
+  Drops:
+    - ImbuedSword 1 0.002
+    - ImbuedHelm 1 0.002
+    - ImbuedChest 1 0.002
+    - ImbuedLegs 1 0.002
+    - ImbuedBoots 1 0.002
+    - ImbuedShield 1 0.002
+    - ImbuedAxe 1 0.002
+    - ImbuedPickaxe 1 0.002
+    - ImbuedShovel 1 0.002
+    - ImbuedHoe 1 0.002
+    - ImbuedFishingRod 1 0.002
+VeteranRangedDrops:
+  TotalItems: 1
+  Drops:
+    - ImbuedBow 1 0.01
+    - ImbuedHelm 1 0.002
+    - ImbuedChest 1 0.002
+    - ImbuedLegs 1 0.002
+    - ImbuedBoots 1 0.002
+    - ImbuedShield 1 0.002
+    - ImbuedAxe 1 0.002
+    - ImbuedPickaxe 1 0.002
+    - ImbuedShovel 1 0.002
+    - ImbuedHoe 1 0.002
+    - ImbuedFishingRod 1 0.002
+VeteranMinionDrops:
+  Conditions:
+    - playerwithin 50
+  Drops:
+    - exp 50
+    - money 5
+SkeletalRogueDrops:
+  Conditions:
+    - playerwithin 50
+  MinItems: 1
+  MaxItems: 3
+  Drops:
+    - gold_ingot 8-16 1
+LesserWightDrops:
+  Conditions:
+    - playerwithin 50
+  MinItems: 1
+  MaxItems: 3
+  Drops:
+    - iron_ingot 1-3 1
+LesserShadeDrops:
+  Conditions:
+    - playerwithin 50
+  Drops:
+    - ender_pearl 8 1
+VeteranTableTest:
+  TotalItems: 1
+  Drops:
+    - ImbuedBow 1 0.01
+    - ImbuedHelm 1 0.002
+    - ImbuedChest 1 0.002
+    - ImbuedLegs 1 0.002
+    - ImbuedBoots 1 0.002
+    - ImbuedShield 1 0.002
+    - ImbuedAxe 1 0.002
+    - ImbuedPickaxe 1 0.002
+    - ImbuedShovel 1 0.002
+    - ImbuedHoe 1 0.002
+    - ImbuedFishingRod 1 0.002
+QuestVeteranDrops:
+  Drops:
+    - exp 150 1
+    - money 25 1
+    - SmallRedstoneCache 1 0.05
+QuestVeteranMeleeDrops:
+  MaxItems: 1
+  Drops:
+    - ImbuedSword 1 0.002
+    - ImbuedHelm 1 0.002
+    - ImbuedChest 1 0.002
+    - ImbuedLegs 1 0.002
+    - ImbuedBoots 1 0.002
+    - ImbuedShield 1 0.002
+    - ImbuedAxe 1 0.002
+    - ImbuedPickaxe 1 0.002
+    - ImbuedShovel 1 0.002
+    - ImbuedHoe 1 0.002
+    - ImbuedFishingRod 1 0.002
+QuestVeteranRangedDrops:
+  MaxItems: 1
+  Drops:
+    - ImbuedBow 1 0.01
+    - ImbuedHelm 1 0.002
+    - ImbuedChest 1 0.002
+    - ImbuedLegs 1 0.002
+    - ImbuedBoots 1 0.002
+    - ImbuedShield 1 0.002
+    - ImbuedAxe 1 0.002
+    - ImbuedPickaxe 1 0.002
+    - ImbuedShovel 1 0.002
+    - ImbuedHoe 1 0.002
+    - ImbuedFishingRod 1 0.002
