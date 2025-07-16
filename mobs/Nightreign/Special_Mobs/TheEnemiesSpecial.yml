@@ -1,0 +1,27 @@
+# =================================================================
+# == SPECIAL MOBS (Mob Đặc Biệt)
+# == Chủ đề: Không dùng để chiến đấu trực tiếp, mang lại tài nguyên.
+# =================================================================
+
+Hoarding_Goblin:
+  Type: BABY_ZOMBIE_VILLAGER
+  Display: "&6Hoarding Goblin"
+  Health: 200
+  Damage: 1 # Gần như không có sát thương
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.45 # Rất nhanh
+    PreventOtherDrops: true
+    AgeLock: true
+  Skills:
+    - runaigoalselector{goal=fleeplayers} ~onDamaged 1 # Bỏ chạy khi bị đánh
+  AIGoalSelectors:
+    - 0 clear
+    - 1 fleeplayers
+    - 2 randomstroll
+  Drops:
+    # Giữ lại drop gốc của các goblin, bạn có thể tạo DropTable riêng
+    - money 1-50 1
+    - redstone 1-64 0.5
+    - LapisLazuli 1-64 0.5
+    - exp 50-100 0.8

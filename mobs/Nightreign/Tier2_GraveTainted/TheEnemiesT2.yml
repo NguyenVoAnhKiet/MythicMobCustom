@@ -1,0 +1,34 @@
+# =================================================================
+# == TIER 2: GRAVE-TAINTED (Ô Uế Mồ Mả)
+# == Chủ đề: Hung hãn hơn, có kỹ năng đơn giản.
+# == Màu: &2 (Xanh Đậm)
+# =================================================================
+
+GraveTainted_Soldier:
+  Type: ZOMBIE
+  Display: "&2Grave-Tainted Soldier"
+  Health: 80
+  Damage: 8
+  Equipment:
+    - IRON_SWORD:0
+    - LEATHER_CHESTPLATE:1
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+  Skills:
+    - skill{s=HamstringElite} @target ~onAttack 0.15 # Có cơ hội làm chậm
+  Drops:
+    - exp 20-30
+    - ROTTEN_FLESH 1-3
+
+GraveTainted_Guardian:
+  Type: GUARDIAN
+  Display: "&2Grave-Tainted Guardian"
+  Health: 90
+  Damage: 9
+  Options:
+    AlwaysShowName: true
+  Drops:
+    - exp 30-40
+    - PRISMARINE_SHARD 1-2
