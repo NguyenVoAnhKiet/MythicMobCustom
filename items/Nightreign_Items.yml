@@ -1,7 +1,198 @@
 # Nightreign_Items.yml
 # Chứa các vật phẩm tùy chỉnh của hệ thống Nightreign
 
-# --- AdminItems.yml ---
+# =================================================================
+# == SPECIAL ITEMS (Vật Phẩm Đặc Biệt)
+# == Chủ đề: Resource items, special effects
+# =================================================================
+
+RegenerationArrow:
+  Id: tipped_arrow
+  Display: "&aArrow of Regeneration"
+  PotionEffects:
+    - HEAL 60 1
+  Lore:
+    - "&7A magical arrow that heals its target"
+
+RedstoneCache:
+  Id: redstone_block
+  Display: "&cRedstone Cache"
+  Lore:
+    - "&7A concentrated block of redstone"
+    - "&7Used for crafting and trading"
+
+SmallRedstoneCache:
+  Id: redstone
+  Display: "&cSmall Redstone Cache"
+  Data: 0
+  Amount: 16
+  Lore:
+    - "&7A small collection of redstone dust"
+    - "&7Used for basic crafting and trading"
+
+# =================================================================
+# == TIER 1: VAGRANT ITEMS (Vật Phẩm Lang Thang)
+# == Chủ đề: Basic gear, slight enhancements
+# =================================================================
+
+VagrantSword:
+  Id: Iron_Sword
+  Display: "&7Vagrant's Blade"
+  Lore:
+    - "&7A basic sword with minor enchantments"
+  Enchantments:
+    - DAMAGE_ALL:1
+  Attributes:
+    MainHand:
+      Damage: 6
+      AttackSpeed: -2.4
+
+VagrantBow:
+  Id: Bow
+  Display: "&7Vagrant's Bow"
+  Lore:
+    - "&7A basic bow with minor enchantments"
+  Enchantments:
+    - ARROW_DAMAGE:1
+  Attributes:
+    MainHand:
+      Damage: 2
+
+# =================================================================
+# == TIER 2: GRAVE-TAINTED ITEMS (Vật Phẩm Ô Uế)
+# == Chủ đề: Enhanced gear, durability focus
+# =================================================================
+
+ImbuedSword:
+  Id: Iron_Sword
+  Display: "&2Imbued Iron Blade"
+  Lore:
+    - "&7Enhanced with grave magic"
+  Enchantments:
+    - DAMAGE_ALL:2
+    - DURABILITY:2
+  Attributes:
+    MainHand:
+      Damage: 7
+      AttackSpeed: -2.4
+
+ImbuedBow:
+  Id: Bow
+  Display: "&2Imbued Bow"
+  Lore:
+    - "&7Enhanced with grave magic"
+  Enchantments:
+    - ARROW_DAMAGE:2
+    - DURABILITY:2
+  Attributes:
+    MainHand:
+      Damage: 3
+
+# =================================================================
+# == TIER 3: FELL-BRANDED ITEMS (Vật Phẩm Bị Nguyền)
+# == Chủ đề: Advanced gear, unique effects
+# =================================================================
+
+BurnishedSword:
+  Id: Diamond_Sword
+  Display: "&cBurnished Blade"
+  Lore:
+    - "&7Infused with fell magic"
+  Enchantments:
+    - DAMAGE_ALL:3
+    - FIRE_ASPECT:1
+  Attributes:
+    MainHand:
+      Damage: 8
+      AttackSpeed: -2.4
+
+BurnishedBow:
+  Id: Bow
+  Display: "&cBurnished Longbow"
+  Lore:
+    - "&7Infused with fell magic"
+  Enchantments:
+    - ARROW_DAMAGE:3
+    - ARROW_FIRE:1
+  Attributes:
+    MainHand:
+      Damage: 4
+
+# =================================================================
+# == TIER 4: CRUCIBLE-FORGED ITEMS (Vật Phẩm Rèn Trong Lò)
+# == Chủ đề: Elite gear, powerful enchantments
+# =================================================================
+
+EmblazonedSword:
+  Id: Diamond_Sword
+  Display: "&6Emblazoned Blade"
+  Lore:
+    - "&7Forged in ancient crucibles"
+  Enchantments:
+    - DAMAGE_ALL:4
+    - FIRE_ASPECT:2
+    - DURABILITY:3
+  Attributes:
+    MainHand:
+      Damage: 10
+      AttackSpeed: -2.4
+
+EmblazonedBow:
+  Id: Bow
+  Display: "&6Emblazoned Warbow"
+  Lore:
+    - "&7Forged in ancient crucibles"
+  Enchantments:
+    - ARROW_DAMAGE:4
+    - ARROW_FIRE:1
+    - ARROW_KNOCKBACK:1
+  Attributes:
+    MainHand:
+      Damage: 5
+
+# =================================================================
+# == TIER 5: NIGHT-REVENANT ITEMS (Vật Phẩm Dạ Vương)
+# == Chủ đề: Legendary gear, best-in-slot
+# =================================================================
+
+UmbraSword:
+  Id: Diamond_Sword
+  Display: "&5&lUmbral Blade"
+  Lore:
+    - "&7A legendary weapon of the Night-Revenant"
+    - "&7Pulses with dark energy"
+  Enchantments:
+    - DAMAGE_ALL:5
+    - FIRE_ASPECT:2
+    - DURABILITY:3
+    - SWEEPING_EDGE:3
+  Attributes:
+    MainHand:
+      Damage: 12
+      AttackSpeed: -2.4
+      KnockbackResistance: 0.1
+
+UmbraBow:
+  Id: Bow
+  Display: "&5&lUmbral Greatbow"
+  Lore:
+    - "&7A legendary weapon of the Night-Revenant"
+    - "&7Darkness flows through its string"
+  Enchantments:
+    - ARROW_DAMAGE:5
+    - ARROW_FIRE:1
+    - ARROW_KNOCKBACK:2
+    - DURABILITY:3
+  Attributes:
+    MainHand:
+      Damage: 6
+      KnockbackResistance: 0.1
+
+# =================================================================
+# == ADMIN ITEMS (Vật Phẩm Admin)
+# == Chủ đề: Testing and administrative purposes
+# =================================================================
+
 AdminHelm:
   Id: Diamond_Helmet
   Data: 0
@@ -17,6 +208,7 @@ AdminHelm:
       Health: 5
       Armor: 3
       ArmorToughness: 2
+
 AdminChest:
   Id: Diamond_Chestplate
   Data: 0
@@ -31,6 +223,7 @@ AdminChest:
       Health: 9
       Armor: 9
       ArmorToughness: 2
+
 AdminLegs:
   Id: Diamond_Leggings
   Data: 0
@@ -44,6 +237,7 @@ AdminLegs:
       Health: 7
       Armor: 7
       ArmorToughness: 2
+
 AdminBoots:
   Id: Diamond_Boots
   Data: 0
@@ -58,12 +252,3 @@ AdminBoots:
       Health: 3
       Armor: 4
       ArmorToughness: 2
-
-# --- BaseItems.yml ---
-RegenerationArrow:
-  Id: tipped_arrow
-  PotionEffects:
-    - HEAL 60 1
-LapisLazuli:
-  Id: ink_sack
-  Data: 4
