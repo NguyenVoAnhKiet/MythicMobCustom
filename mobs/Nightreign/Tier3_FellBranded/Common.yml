@@ -1,0 +1,51 @@
+# Tier3_Common.yml
+# Common mobs cho Tier 3 - Fell-Branded (Bị Nguyền Rủa)
+
+FellBrandedArcher:
+  Type: SKELETON
+  Display: '&dFell-Branded Archer'
+  Health: 300
+  Damage: 12
+  MovementSpeed: 0.3
+  Skills:
+    - message{m="<mob.name>&d<&co> Your flesh will be filled with arrows!"} @PIR{r=40} ~onCombat >0 0.2
+    - skill{s=CripplingShotElite} @PIR{r=40} >0 0.2
+    - skill{s=BurningShotElite} @PIR{r=40} >0 0.2
+    - shoot{type=ARROW;velocity=10;damage=12} @Target ~onTimer:60
+  Equipment:
+    - iron_chestplate:3
+    - iron_leggings:2
+    - iron_boots:1
+    - bow:0
+  Drops:
+    - Tier3MobDrop
+  Options:
+    AlwaysShowName: true
+    FollowRange: 50
+    PreventOtherDrops: false
+  Modules:
+    ThreatTable: true
+
+FellBrandedExecutioner:
+  Type: VINDICATOR
+  Display: '&dFell-Branded Executioner'
+  Health: 400
+  Damage: 18
+  MovementSpeed: 0.25
+  Skills:
+    - message{m="<mob.name>&d<&co> Your head belongs to me!"} @PIR{r=40} ~onCombat >0 0.2
+    - skill{s=SmashAttackElite} @target ~onTimer:200 >0 0.4
+    - skill{s=CrippleElite} @PIR{r=20} >0 0.2
+  Equipment:
+    - diamond_axe:0
+    - iron_chestplate:0
+    - iron_leggings:0
+  Drops:
+    - Tier3MobDrop
+  Options:
+    AlwaysShowName: true
+    FollowRange: 40
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+  Modules:
+    ThreatTable: true

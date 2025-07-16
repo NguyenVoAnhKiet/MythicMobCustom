@@ -1,8 +1,8 @@
 FireMageT3:
   Type: vindicator
   Display: "&dCultist Fire Mage [Tier 3]"
-  Health: 600
-  Damage: 6
+  Health: 400
+  Damage: 12
   Disguise:
     Type: firemage
     ModifyBoundingBox: true

@@ -2,7 +2,7 @@ CrucibleForged_Bloodwitch:
   Type: WITCH
   Display: "&6Crucible-Forged Bloodwitch"
   Health: 750
-  Damage: 14
+  Damage: 20
   Options:
     AlwaysShowName: true
     FollowRange: 40

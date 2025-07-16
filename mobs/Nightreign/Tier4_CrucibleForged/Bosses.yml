@@ -1,0 +1,43 @@
+# Tier4_Bosses.yml
+# Mini-Bosses cho Tier 4 - Crucible-Forged (Luyện Trong Lò Cổ)
+
+CrucibleSentinel:
+  Type: IRON_GOLEM
+  Display: '&6Crucible-Forged Sentinel'
+  Health: 1000
+  Damage: 22
+  Skills:
+    - message{m="<mob.name>&6<&co> You shall not pass!"} @PIR{r=40} ~onCombat >0 0.2
+    - skill{s=GroundPoundCrucible} @PIR{r=8} ~onTimer:200 >0 0.4 # 30 damage AoE
+    - skill{s=ShieldWallCrucible} ~onTimer:400 >0 0.3
+  Drops:
+    - Tier4MobDrop
+  Options:
+    AlwaysShowName: true
+    FollowRange: 40
+    MovementSpeed: 0.2
+    KnockbackResistance: 0.8
+    PreventOtherDrops: true
+  Modules:
+    ThreatTable: true
+
+CrucibleForgedBloodwitch:
+  Type: WITCH
+  Display: '&6Crucible-Forged Bloodwitch'
+  Health: 750
+  Damage: 20
+  Skills:
+    - message{m="<mob.name>&6<&co> I will rip the life from your corpse!"} @PIR{r=40} ~onCombat >0 0.2
+    - skill{s=LifeLeechCrucible} @target ~onTimer:150 0.4 # 30 damage drain
+    - skill{s=RallyCrucible} @MobsInRadius{r=15} ~onTimer:400 1
+    - teleport{spreadh=10;spreadv=3} @self ~onDamaged <50% 0.6
+  Drops:
+    - Tier4MobDrop
+  Options:
+    AlwaysShowName: true
+    FollowRange: 40
+    MovementSpeed: 0.2
+    KnockbackResistance: 0.7
+    PreventOtherDrops: true
+  Modules:
+    ThreatTable: true

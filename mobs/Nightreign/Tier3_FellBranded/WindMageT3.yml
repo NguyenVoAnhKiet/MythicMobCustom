@@ -1,8 +1,8 @@
 WindMageT3:
   Type: vindicator
   Display: "&dCultist Wind Mage [Tier 3]"
-  Health: 600
-  Damage: 6
+  Health: 400
+  Damage: 12
   Disguise:
     Type: windmage
     ModifyBoundingBox: true

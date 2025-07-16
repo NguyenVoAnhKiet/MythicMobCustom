@@ -1,8 +1,8 @@
 Sharpshooter:
   Type: SKELETON
   Display: "&dSharpshooter"
-  Health: 200
-  Damage: 10
+  Health: 300
+  Damage: 12
   MovementSpeed: 0.3
   Skills:
     - message{cooldown=20;m="<mob.name>&f<&co> Your corpse will be littered with arrows!"} @PlayersInRadius{r=40} ~onCombat >0 0.2

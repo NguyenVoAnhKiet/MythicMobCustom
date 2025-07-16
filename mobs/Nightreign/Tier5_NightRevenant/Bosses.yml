@@ -1,0 +1,33 @@
+# Tier5_Bosses.yml
+# Final Bosses cho Tier 5 - Night-Revenant (Oan Hồn Dạ Vương)
+
+NightRevenantGodrick:
+  Type: WITHER_SKELETON
+  Display: '&4Night-Revenant Godrick'
+  Health: 3000
+  Damage: 35
+  Skills:
+    - message{m="<mob.name>&4<&co> Kneel before the true lord of night!"} @PlayersInRadius{r=50} ~onSpawn
+    - message{m="<mob.name>&4<&co> Your soul is forfeit!"} @PIR{r=40} ~onCombat >0 0.2
+    - skill{s=NightfallCleave} @PIR{r=8} ~onTimer:400 >0 0.4 # 45 damage after 2s charge
+    - skill{s=DarkflameVolley} @PIR{r=30} ~onTimer:300 >0 0.3
+    - skill{s=ShadowStep} @target ~onTimer:200 >0 0.3
+  Equipment:
+    - NightRevenantBlade:0
+    - NightRevenantHelm:4
+    - NightRevenantChest:3
+    - NightRevenantLegs:2
+    - NightRevenantBoots:1
+  Drops:
+    - Tier5MobDrop
+    - NightRevenantBlade 1 0.1
+    - NightRevenantArmor 1 0.1
+  Options:
+    AlwaysShowName: true
+    FollowRange: 50
+    MovementSpeed: 0.3
+    KnockbackResistance: 0.9
+    PreventOtherDrops: true
+    PreventSunburn: true
+  Modules:
+    ThreatTable: true
