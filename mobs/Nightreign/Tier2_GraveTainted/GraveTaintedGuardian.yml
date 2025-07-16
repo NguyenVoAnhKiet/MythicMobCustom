@@ -1,0 +1,9 @@
+GraveTainted_Guardian:
+  Type: GUARDIAN
+  Display: "&2Grave-Tainted Guardian"
+  Health: 90
+  Damage: 9
+  Options:
+    AlwaysShowName: true
+  Drops:
+    - Tier2MobDrop

@@ -1,0 +1,20 @@
+CrucibleForged_Lich:
+  Type: ZOMBIE
+  Display: "&6Crucible-Forged Lich"
+  Health: 800
+  Damage: 16
+  Equipment:
+    - DIAMOND_SWORD:0
+    - IRON_CHESTPLATE:1
+  Options:
+    AlwaysShowName: true
+    FollowRange: 40
+    MovementSpeed: 0.25
+    KnockbackResistance: 0.8
+  Skills:
+    - message{m="<mob.name>&6<&co> Death comes for you!"} @PIR{r=40} ~onCombat >0 1
+    - skill{s=PoisonFangElite} @target ~onTimer:120 0.8
+    - skill{s=SummonLichMinionsElite} @self ~onTimer:400 1 # Triệu hồi lính
+    - skill{s=CrippleElite} @PIR{r=20} ~onTimer:200 0.6
+  Drops:
+    - Tier4MobDrop

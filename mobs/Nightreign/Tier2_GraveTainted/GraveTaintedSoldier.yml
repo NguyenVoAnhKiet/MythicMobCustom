@@ -1,0 +1,16 @@
+GraveTainted_Soldier:
+  Type: ZOMBIE
+  Display: "&2Grave-Tainted Soldier"
+  Health: 80
+  Damage: 8
+  Equipment:
+    - IRON_SWORD:0
+    - LEATHER_CHESTPLATE:1
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+  Skills:
+    - skill{s=HamstringElite} @target ~onAttack 0.15 # Có cơ hội làm chậm
+  Drops:
+    - Tier2MobDrop

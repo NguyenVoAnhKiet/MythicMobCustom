@@ -1,0 +1,13 @@
+FellBranded_Stalker:
+  Type: CAVE_SPIDER
+  Display: "&cFell-Branded Stalker"
+  Health: 200
+  Damage: 11
+  Options:
+    AlwaysShowName: true
+    PreventOtherDrops: true
+  Skills:
+    - skill{s=ShadowstepElite} @target ~onDamaged 0.3 # Dịch chuyển khi bị đánh
+    - skill{s=VanishElite} @self ~onTimer:300 0.5 # Tàng hình
+  Drops:
+    - Tier3MobDrop

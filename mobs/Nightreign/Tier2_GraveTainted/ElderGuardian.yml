@@ -1,0 +1,5 @@
+ElderGuardian:
+  Type: ELDER_GUARDIAN
+  Display: "&9Elder Guardian [Tier 2]"
+  Health: 80
+  Damage: 12

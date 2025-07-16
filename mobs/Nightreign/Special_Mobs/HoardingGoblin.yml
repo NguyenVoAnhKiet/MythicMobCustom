@@ -1,8 +1,3 @@
-# =================================================================
-# == SPECIAL MOBS (Mob Đặc Biệt)
-# == Chủ đề: Không dùng để chiến đấu trực tiếp, mang lại tài nguyên.
-# =================================================================
-
 Hoarding_Goblin:
   Type: BABY_ZOMBIE_VILLAGER
   Display: "&6Hoarding Goblin"

@@ -1,0 +1,17 @@
+FellBranded_Ogre:
+  Type: VINDICATOR
+  Display: "&cFell-Branded Ogre"
+  Health: 250
+  Damage: 12
+  Equipment:
+    - IRON_AXE:0
+  Options:
+    AlwaysShowName: true
+    FollowRange: 30
+    MovementSpeed: 0.29
+    KnockbackResistance: 0.5
+  Skills:
+    - skill{s=CrushingBlowVeteran} @target ~onAttack 0.3
+    - skill{s=StompVeteran} @PIR{r=5} ~onTimer:240
+  Drops:
+    - Tier3MobDrop

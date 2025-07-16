@@ -1,0 +1,17 @@
+FellBranded_Deathknight:
+  Type: WITHER_SKELETON
+  Display: "&cFell-Branded Deathknight"
+  Health: 220
+  Damage: 10
+  Equipment:
+    - IRON_SWORD:0
+    - IRON_CHESTPLATE:1
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.25
+    FollowRange: 30
+  Skills:
+    - skill{s=SmashAttackElite} @target ~onAttack 0.2
+    - skill{s=PullElite} @PIR{r=15} ~onTimer:200 0.5
+  Drops:
+    - Tier3MobDrop

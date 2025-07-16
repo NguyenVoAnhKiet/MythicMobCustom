@@ -1,0 +1,9 @@
+HUSK:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - rotten_flesh 0-6 1
+  Modules:
+    ThreatTable: true
+  Options:
+    FixDisplay: true

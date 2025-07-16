@@ -1,0 +1,19 @@
+Vagrant_Rockthrower:
+  Type: BABY_ZOMBIE
+  Display: "&7Vagrant Rockthrower"
+  Health: 40
+  Damage: 0 # Sát thương đến từ skill
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    PreventItemPickup: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 fleeplayers
+    - 2 movetowardstarget
+    - 3 randomstroll
+  Skills:
+    - skill{s=RockTossVeteran} @target ~onTimer:40 # Sử dụng skill ném đá có sẵn
+  Drops:
+    - Tier1MobDrop

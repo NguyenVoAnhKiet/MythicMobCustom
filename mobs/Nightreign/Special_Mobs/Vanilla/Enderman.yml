@@ -1,0 +1,11 @@
+ENDERMAN:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - ender_pearl 0-3 1
+  Skills:
+  #    - skill{s=SuperChargeDeathVanilla} @ThreatTablePlayers ~onDeath
+  Modules:
+    ThreatTable: true
+  Options:
+    FixDisplay: true

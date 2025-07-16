@@ -1,0 +1,9 @@
+ENDER_DRAGON:
+  Health: 5000
+  Damage: 18
+  Skills:
+    - skill{s=DragonSummon} @PIR{r=40} >0 0.2
+  Modules:
+    ThreatTable: true
+  Options:
+    FixDisplay: true

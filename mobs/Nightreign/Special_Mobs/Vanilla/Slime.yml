@@ -1,0 +1,11 @@
+SLIME:
+  Drops:
+    - exp 12 1
+    - money 1 1
+    - slime_ball 0-4 1
+  Skills:
+  #    - skill{s=SuperChargeDeathVanilla} @ThreatTablePlayers ~onDeath
+  Modules:
+    ThreatTable: true
+  Options:
+    FixDisplay: true

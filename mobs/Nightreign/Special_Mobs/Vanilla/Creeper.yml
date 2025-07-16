@@ -1,0 +1,11 @@
+CREEPER:
+  Drops:
+    - exp 15 1
+    - money 1 1
+    - sulphur 0-6 1
+  Skills:
+  #    - skill{s=SuperChargeDeathVanilla} @ThreatTablePlayers ~onDeath
+  Modules:
+    ThreatTable: true
+  Options:
+    FixDisplay: true

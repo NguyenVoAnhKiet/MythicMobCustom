@@ -1,0 +1,14 @@
+Vagrant_Rusher:
+  Type: BABY_ZOMBIE
+  Display: "&7Vagrant Rusher"
+  Health: 45
+  Damage: 5
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.32 # Nhanh hơn grunt
+    PreventOtherDrops: true
+    PreventItemPickup: true
+  Skills:
+    - skill{s=RushVeteran} @target ~onTimer:100 # Sử dụng skill lao tới có sẵn
+  Drops:
+    - Tier1MobDrop

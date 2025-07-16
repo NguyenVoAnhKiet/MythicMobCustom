@@ -1,0 +1,12 @@
+Vagrant_Grunt:
+  Type: BABY_ZOMBIE
+  Display: "&7Vagrant Grunt"
+  Health: 30
+  Damage: 4
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.27
+    PreventOtherDrops: true
+    PreventItemPickup: true
+  Drops:
+    - Tier1MobDrop

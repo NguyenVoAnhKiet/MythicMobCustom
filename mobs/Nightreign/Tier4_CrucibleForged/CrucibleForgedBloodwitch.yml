@@ -1,0 +1,17 @@
+CrucibleForged_Bloodwitch:
+  Type: WITCH
+  Display: "&6Crucible-Forged Bloodwitch"
+  Health: 750
+  Damage: 14
+  Options:
+    AlwaysShowName: true
+    FollowRange: 40
+    MovementSpeed: 0.2
+    KnockbackResistance: 0.7
+  Skills:
+    - message{m="<mob.name>&6<&co> I will rip the life from your corpse!"} @PIR{r=40} ~onCombat >0 1
+    - skill{s=LifeLeechElite} @target ~onTimer:150 0.7 # Hút máu
+    - skill{s=RallyElite} @MobsInRadius{r=15;t=FellBranded_*} ~onTimer:400 1 # Buff cho đồng đội
+    - teleport{spreadh=10;spreadv=3} @self ~onDamaged <50% 0.6 # Dịch chuyển khi dưới 50% máu
+  Drops:
+    - Tier4MobDrop
