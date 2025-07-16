@@ -1,6 +1,6 @@
-WindMageElite:
+WindMageT3:
   Type: vindicator
-  Display: "&dCultist Wind Mage"
+  Display: "&dCultist Wind Mage [Tier 3]"
   Health: 600
   Damage: 6
   Disguise:
@@ -31,9 +31,9 @@ WindMageElite:
     - VeteranMeleeDrops 1 0.02
     - WindMageElytra 1 0.005
 
-FireMageElite:
+FireMageT3:
   Type: vindicator
-  Display: "&dCultist Fire Mage"
+  Display: "&dCultist Fire Mage [Tier 3]"
   Health: 600
   Damage: 6
   Disguise:
@@ -64,6 +64,3 @@ FireMageElite:
     - EliteDrops 1 1
     - EliteMeleeDrops 1 0.01
     - VeteranMeleeDrops 1 0.02
-
-GoblinLeader:
-  Type: BABY_ZOMBIE
