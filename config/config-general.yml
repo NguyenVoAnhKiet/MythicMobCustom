@@ -33,6 +33,4 @@ Configuration:
       ShowXPMessage: true
       XPMessageFormat: You receive <drops.xp> experience for slaying <mob.name>
     Vault:
-      Enabled: true
-      ShowMoneyMessage: true
-      MoneyMessageFormat: <mob.name> dropped <drops.money> gold!
+      Enabled: false

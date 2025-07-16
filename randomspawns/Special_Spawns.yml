@@ -13,7 +13,7 @@ SpecialMobSpawns:
 
 # Resource Goblins
 GoblinSpawns_Prosperus:
-  Type: GoblinRedstone,GoblinMoney,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
+  Type: GoblinRedstone,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
   Worlds: prosperus
   Chance: 0.001
   Action: REPLACE
@@ -22,7 +22,7 @@ GoblinSpawns_Prosperus:
     - region{r=dawnslanding} false
 
 GoblinSpawns_Heavens:
-  Type: GoblinRedstone,GoblinMoney,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
+  Type: GoblinRedstone,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
   Worlds: heavens,ultimatus
   Chance: 0.005
   Action: REPLACE
@@ -30,19 +30,19 @@ GoblinSpawns_Heavens:
     - outside true
 
 GoblinSpawns_Nether:
-  Type: GoblinRedstone,GoblinMoney,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
+  Type: GoblinRedstone,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
   Worlds: prosperus_nether
   Chance: 0.005
   Action: REPLACE
 
 GoblinSpawns_End:
-  Type: GoblinRedstone,GoblinMoney,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
+  Type: GoblinRedstone,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
   Worlds: prosperus_the_end
   Chance: 0.005
   Action: REPLACE
 
 GoblinSpawns_Avenfeld:
-  Type: GoblinRedstone,GoblinMoney,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
+  Type: GoblinRedstone,GoblinLapis,GoblinExp,GoblinSand,GoblinPrismarine
   Worlds: avenfeld
   Chance: 0.005
   Action: REPLACE

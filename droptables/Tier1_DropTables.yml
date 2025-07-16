@@ -7,7 +7,6 @@ Tier1MobDrop:
     - playerwithin 40
   Drops:
     - exp 15 1
-    - money 1 1
     - rotten_flesh 0-6 1
     - bone 0-6 0.5
     - SmallRedstoneCache 1 0.05

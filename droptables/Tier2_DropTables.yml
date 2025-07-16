@@ -7,7 +7,6 @@ Tier2MobDrop:
     - playerwithin 40
   Drops:
     - exp 150 1
-    - money 25 1
     - iron_ingot 0-2 0.5
     - SmallRedstoneCache 1 0.1
     - RedstoneCache 1 0.05

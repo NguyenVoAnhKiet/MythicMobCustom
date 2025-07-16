@@ -8,7 +8,6 @@ Tier4MobDrop:
   MaxItems: 3
   Drops:
     - exp 2500-7500 1
-    - money 250-2500 1
     - gold_ingot 32-64 1
     - diamond 5-10 1
     - redstone 32-64 1

@@ -63,16 +63,6 @@ GoblinMoney:
   Display: "&6Greedy Goblin [Tier 1]"
   Health: 200
   Damage: 5
-  Drops:
-    - money 50 1
-    - money 1-50 0.5
-    - money 1-50 0.5
-    - money 1-50 0.25
-    - money 1-50 0.25
-    - money 1-50 0.125
-    - money 1-50 0.125
-    - money 1-50 0.06125
-    - money 1-50 0.06125
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.45

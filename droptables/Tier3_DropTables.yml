@@ -7,7 +7,6 @@ Tier3MobDrop:
     - playerwithin 40
   Drops:
     - exp 500-1500 1
-    - money 50 1
     - diamond 1-2 1
     - RedstoneCache 1 0.15
   DropsPerLevel:

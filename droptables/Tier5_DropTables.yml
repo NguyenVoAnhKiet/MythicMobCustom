@@ -9,7 +9,6 @@ Tier5MobDrop:
   MaxItems: 4
   Drops:
     - exp 5000-10000 1
-    - money 1000-5000 1
     - diamond_block 1-2 0.7
     - emerald_block 1-2 0.7
     - RedstoneCache 2-3 0.5
