@@ -1,44 +1,156 @@
-# Tier3_Skills.yml
-# Kỹ năng cho Fell-Branded Mobs (Tier 3)
+# =================================================================
+# TIER 3: FELL-BRANDED SKILLS
+# Kỹ năng tập trung vào sự hung hãn, sát thương cao, tự cường hóa (Enrage),
+# và các cơ chế yêu cầu người chơi phải chủ động né tránh.
+# =================================================================
 
-# Ogre Skills
-CrushingBlow:
+# --- KỸ NĂNG CHO MOB COMMON ---
+
+ReaverCharge:
+  Cooldown: 12
+  Skills:
+    - sound{s=entity.zombified_piglin.angry;p=1.3} @self
+    - velocity{mode=FORWARD;s=1.8,0.2,1.8;d=20} @self
+    - message{m="<mob.name> &ccharges forward!"} @PIR{r=25}
+
+FireballVolley:
+  Cooldown: 6
+  Skills:
+    - sound{s=entity.blaze.shoot;p=0.8} @self
+    # Bắn 3 quả cầu lửa nhỏ liên tiếp
+    - projectile{ot=SmallFireball;p=1;a=3;i=5;v=15} @target
+SmallFireball:
+  MobType: SMALL_FIREBALL
+  Skills:
+    - projectile{onHit=SmallFireballHit}
+SmallFireballHit:
+  Skills:
+    - damage{a=8} @trigger
+    - effect:particles{p=FLAME;a=20} @trigger
+
+FlameWall:
   Cooldown: 15
   Skills:
-    - damage{amount=8} @target
-    - throw{velocity=1;velocityY=0.5} @target
-    - sound{s=entity.iron_golem.attack;volume=1} @self
-    - effect:particles{p=explosion;amount=10} @target
+    - sound{s=block.fire.ambient;v=1.5} @self
+    # Tạo một bức tường lửa ở vị trí mục tiêu
+    - blockmask{b=FIRE;d=100;r=1;shape=line;line_length=7} @target
 
-# Deathknight Skills
-ShadowStrike:
-  Cooldown: 20
+SunderingStrike:
+  Cooldown: 5
   Skills:
-    - teleport{spread=2} @target
-    - damage{amount=6;type=MAGIC} @target
-    - effect:particles{p=smoke;amount=20} @self
-    - potion{type=WITHER;duration=60;level=1} @target
+    - damage{a=10;pk=true} @target # Sát thương cao, bỏ qua một phần giáp
+    - potion{type=WEAKNESS;d=100;l=0} @target
+    - sound{s=entity.item.shield_break;p=1.1} @self
 
-# Sharpshooter Skills
-PiercingShot:
+IronWill:
   Cooldown: 25
   Skills:
-    - projectile{onTick=PiercingShotTick;onHit=PiercingShotHit;v=20;i=1;hR=0.5;vR=0.5;piercing=true} @target
-    - sound{s=entity.arrow.shoot;volume=1} @self
+    # Tăng khả năng phòng thủ và hồi phục nhẹ
+    - message{m="<mob.name> &cbraces for impact!"} @PIR{r=25}
+    - potion{type=RESISTANCE;d=120;l=0} @self
+    - potion{type=REGENERATION;d=80;l=0} @self
+    - sound{s=entity.iron_golem.repair} @self
 
-PiercingShotTick:
+SummonFellWisps:
+  Cooldown: 12
   Skills:
-    - effect:particles{p=crit;amount=1} @origin
+    - sound{s=entity.evoker.prepare_summon} @self
+    - summon{mob=FellWisp;a=3;r=4} @self
+# (Bạn cần tạo một mob tên là FellWisp, ví dụ là một con Vex với máu thấp)
 
-PiercingShotHit:
+DarkBolt:
+  Cooldown: 3
   Skills:
-    - damage{amount=5} @target
-    - potion{type=WEAKNESS;duration=40;level=1} @target
+    - projectile{ot=DarkBoltProjectile;p=1} @target
+DarkBoltProjectile:
+  MobType: WITHER_SKULL
+  Skills:
+    - projectile{onTick=DarkBoltTick;onHit=DarkBoltHit}
+DarkBoltTick:
+  Skills:
+    - effect:particles{p=SQUID_INK;a=3} @origin
+DarkBoltHit:
+  Skills:
+    - damage{a=13} @trigger
+    - potion{type=WITHER;d=60;l=0} @trigger
 
-# Stalker Skills
-Vanish:
-  Cooldown: 30
+FrenziedRampage:
+  Cooldown: 1
   Skills:
-    - potion{type=INVISIBILITY;duration=100;level=1} @self
-    - effect:particles{p=portal;amount=30} @self
-    - sound{s=entity.enderman.teleport;volume=1} @self
+    - potion{type=SPEED;d=200;l=1} @self
+    - potion{type=INCREASE_DAMAGE;d=200;l=0} @self
+    - message{m="<mob.name> &centers a frenzy!"} @PIR{r=25}
+
+# --- KỸ NĂNG CHO MOB RARE ---
+
+ExecutionersChop:
+  Cooldown: 8
+  Skills:
+    # Gồng 0.5 giây rồi chém một cú cực mạnh
+    - effect:particles{p=CRIT_MAGIC;a=30} @self
+    - sound{s=entity.player.attack.crit} @self
+    - delay 10
+    - damage{a=20;pk=true;i=true} @target
+    - sound{s=entity.player.attack.knockback;p=1.5;v=1.2} @self
+
+BattleShout:
+  Cooldown: 20
+  Skills:
+    - sound{s=entity.vindicator.celebrate;v=1.5} @self
+    # Tăng sức mạnh cho bản thân và đồng minh, làm suy yếu kẻ địch
+    - potion{type=INCREASE_DAMAGE;d=200;l=1} @SelfAndMobsInRadius{r=15;f=Fell_Branded_Elite}
+    - potion{type=WEAKNESS;d=120;l=0} @PIR{r=15}
+
+AbyssalGrasp:
+  Cooldown: 10
+  Skills:
+    # Trói chân mục tiêu
+    - sound{s=block.enchantment_table.use} @self
+    - effect:particles{p=SQUID_INK;a=50;y=0.2} @target
+    - potion{type=SLOW;d=60;l=7} @target
+
+VoidBlast:
+  Cooldown: 5
+  Skills:
+    - projectile{onHit=VoidBlastHit;v=18;r=5} @target
+VoidBlastHit:
+  Skills:
+    # Nổ gây sát thương diện rộng
+    - damage{a=15} @EIR{r=3}
+    - effect:explosion{p=EXPLOSION_LARGE} @origin
+    - sound{s=entity.generic.explode;p=1.1} @origin
+
+# --- KỸ NĂNG CHO MOB UNIQUE ---
+
+CurseOfBinding:
+  Skills:
+    # Hào quang làm chậm kẻ địch
+    - potion{type=SLOW;d=20;l=0;o=true} @PIR{r=10}
+
+UnchainedRage:
+  Cooldown: 1
+  Skills:
+    # Kích hoạt trạng thái Cuồng Nộ
+    - message{m="&4The chains break! <mob.name> is UNCHAINED!"} @p >0
+    - sound{s=entity.ender_dragon.growl;p=1.3} @self
+    - setfaction{f=Fell_Branded_Enraged} @self
+    - potion{type=SPEED;d=9999;l=1} @self
+    - potion{type=INCREASE_DAMAGE;d=9999;l=1} @self
+    - effect:particles{p=FLAME;a=300;hS=0.5;vS=0.5;speed=0.1;y=1} @self
+
+WorldBreaker:
+  Cooldown: 15
+  Skills:
+    # Đòn tấn công AoE mạnh
+    - message{m="&4<mob.name> prepares to shatter the earth!"} @p >0
+    - effect:particlering{p=LAVA;a=100;r=6;points=32;y=0.2} @self
+    - delay 40
+    - damage{a=25;pk=true} @PIR{r=6}
+    - effect:explosion{p=EXPLOSION_HUGE} @self
+    - sound{s=entity.wither.break_block} @self
+
+MorgathChainPull:
+  Cooldown: 8
+  Skills:
+    - sound{s=entity.fishing_bobber.retrieve} @self
+    - pull{v=2.5} @target

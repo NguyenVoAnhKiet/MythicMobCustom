@@ -1,0 +1,38 @@
+# =================================================================
+# NIGHTREIGN DROPTABLES - TIER 2
+# Bảng rơi đồ cho các mob Rare và Unique của Tier 2.
+# =================================================================
+
+GraveTainted_Rare_Drops:
+  # Phần thưởng dành cho 3 mob Rare: Sepulcher Knight, Blood-starved Fiend, Corpse-fed Beast.
+  # Mục tiêu: Cung cấp tài nguyên cấp trung và cơ hội nhận được vật phẩm có giá trị.
+  Conditions: []
+  Drops:
+    # Tiền tệ & Vật liệu cơ bản
+    - exp 75-100 1 1.0 # Luôn rơi kinh nghiệm
+    - EMERALD 2-5 0.8 # 80% cơ hội rơi 2-5 Emerald
+    - GOLD_INGOT 1-3 0.6 # 60% cơ hội rơi 1-3 thỏi vàng
+
+    # Vật phẩm tùy chỉnh
+    - Grave_Moss 1-2 0.4 # 40% cơ hội rơi Rêu Mộ
+    - Tainted_Blood_Vial 1 0.2 # 20% cơ hội rơi Lọ Máu Ô Uế
+
+    # Trang bị & Sách phép (phần thưởng hiếm)
+    - IRON_CHESTPLATE 1 0.1 # 10% cơ hội rơi giáp sắt
+    - EnchantedBook_Unbreaking1 1 0.12 # 12% cơ hội rơi sách Unbreaking 1
+
+Mausoleum_Unique_Drops:
+  # Phần thưởng đặc biệt khi đánh bại mob Unique "Keeper of the Mausoleum".
+  # Mục tiêu: Phần thưởng độc nhất, giá trị cao, và vật phẩm nhiệm vụ.
+  Conditions: []
+  Drops:
+    # Phần thưởng đảm bảo
+    - exp 350-400 1 1.0 # Luôn rơi rất nhiều kinh nghiệm
+    - Mausoleum_Key 1 1.0 # Luôn rơi Chìa khóa Lăng mộ
+    - EMERALD 10-18 1 1.0 # Luôn rơi một lượng lớn Emerald
+
+    # Phần thưởng hiếm
+    - EnchantedBook_Smite2 1 0.3 # 30% cơ hội rơi sách Smite 2
+    - DIAMOND 1-2 0.5 # 50% cơ hội rơi kim cương
+    - NAME_TAG 1 0.2 # 20% cơ hội rơi thẻ tên
+    - Tainted_Blood_Vial 2-4 0.7 # 70% cơ hội rơi nhiều Lọ Máu Ô Uế

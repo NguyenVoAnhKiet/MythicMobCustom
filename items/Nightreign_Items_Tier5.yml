@@ -1,0 +1,79 @@
+# =================================================================
+# NIGHTREIGN ITEMS - TIER 5
+# Các vật phẩm huyền thoại, nguyên liệu tối thượng, và phần thưởng của Vua.
+# =================================================================
+
+# Vật phẩm rơi ra từ "Eclipsed Gatekeeper"
+Gatekeeper_Soul:
+  Id: ECHO_SHARD
+  Display: "&8&lGatekeeper Soul"
+  Lore:
+    - "&7The cold, heavy soul of the one"
+    - "&7who guarded the final path."
+    - "&7It flickers with a dim, relentless light."
+    - ""
+    - "&8A symbol of unwavering duty."
+  Enchantments:
+    - LUCK:1 # Hiệu ứng phát sáng
+
+# Vật phẩm rơi ra từ "The Penitent Lord"
+Blade_of_Sorrow_Hilt:
+  Id: IRON_INGOT
+  Display: "&d&oHilt of the Blade of Sorrow"
+  Lore:
+    - "&7The broken hilt from the Penitent Lord's"
+    - "&7greatsword. It is adorned with faded"
+    - "&7royal crests."
+    - "&7Perhaps it can be reforged..."
+
+Crown_of_Sorrow:
+  Id: GOLDEN_HELMET
+  Display: "&d&lCrown of Sorrow"
+  Lore:
+    - "&7The twisted, tarnished crown of a fallen king."
+    - "&7It feels heavy with regret."
+    - ""
+    - "&5Grants Resistance I when worn."
+  Attributes:
+    HEAD:
+      Armor: 3
+      ArmorToughness: 2
+      Generic.MovementSpeed: -0.05 # Hơi làm chậm người mặc
+      Generic.KnockbackResistance: 0.1
+
+# Vật phẩm rơi ra từ "Starscourge Behemoth"
+Starscourge_Fragment:
+  Id: NETHER_STAR
+  Display: "&5&lStarscourge Fragment"
+  Lore:
+    - "&7A fragment from the heart of a cosmic beast."
+    - "&7It contains the power of a collapsed star."
+    - "&7A material of unimaginable density and power."
+
+# Vật phẩm rơi ra từ "The Umbral King, Vorlag" (Final Boss)
+Heart_of_the_Nightreign:
+  Id: BEACON
+  Display: "&5&l&k# &dHeart of the Nightreign &5&l&k#"
+  Lore:
+    - "&7The very essence of the Umbral King,"
+    - "&7the source of the eternal night."
+    - "&7Holding it, you feel the darkness"
+    - "&7recede, and a new dawn approaching."
+    - ""
+    - "&6A new age begins."
+
+Vorlag_True_Crown:
+  Id: NETHERITE_HELMET
+  Display: "&5&l&oVorlag's True Crown"
+  Lore:
+    - "&7The crown of the Umbral King, now cleansed"
+    - "&7of its shadow. It radiates a calm,"
+    - "&7commanding presence."
+    - ""
+    - "&dGrants Strength I & Resistance I when worn."
+  Attributes:
+    HEAD:
+      Armor: 4
+      ArmorToughness: 3
+      Generic.AttackDamage: 1.0
+      Generic.KnockbackResistance: 0.2

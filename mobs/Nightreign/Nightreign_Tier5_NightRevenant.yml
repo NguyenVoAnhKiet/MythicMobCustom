@@ -1,0 +1,135 @@
+# =================================================================
+# NIGHTREIGN MOB PACK - TIER 5: NIGHT-REVENANT (COMPLETE)
+# Concept: Những con trùm cuối cùng, thử thách tột đỉnh của thế giới.
+# Gồm: 2 Common (Gateway Boss), 1 Rare (Major Boss), 1 Unique (Final Boss)
+# LƯU Ý: TẤT CẢ MOB NÀY ĐỀU CÓ DESPAWN: FALSE VÀ PHẢI ĐƯỢC ĐẶT THỦ CÔNG.
+# =================================================================
+
+# TIER 5 - COMMON (GATEWAY BOSS) 1/2
+Eclipsed_Gatekeeper:
+  MobType: WITHER_SKELETON
+  Display: "&8&lEclipsed Gatekeeper"
+  Health: 2200
+  Damage: 35
+  Armor: 28
+  Faction: Nightreign_Bosses
+  Options:
+    MovementSpeed: 0.24
+    KnockbackResistance: 0.9
+    FollowRange: 40
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    AlwaysShowName: true
+    Despawn: false
+    MaxCombatDistance: 50
+    Size: 1.8
+  Mechanics:
+    - Boss
+  Aura:
+    - nearby{d=20;skill=ShadowyPresence}
+  Skills:
+    - message{m="&8<mob.name> &7blocks the path forward..."} @p >0 ~onCombat
+    - skill{s=UmbralSlam} @PIR{r=5} ~onTimer:220
+    - skill{s=SoulScythe} @target ~onAttack 0.2
+    - skill{s=GatekeeperEnrage} @self ~onDamaged <40% 1
+  Equipment:
+    - NETHERITE_SWORD{display="&8Gatekeeper's Greatsword"}:0
+    - NETHERITE_CHESTPLATE:2
+    - NETHERITE_LEGGINGS:3
+    - NETHERITE_BOOTS:4
+  Drops:
+    - droptable{d=Gatekeeper_Drops} 1 1.0
+    - exp 3000
+    - command{c="mm broadcast &7The Eclipsed Gatekeeper has been defeated, revealing the path ahead."} @p >0 ~onDeath
+
+# TIER 5 - COMMON (GATEWAY BOSS) 2/2
+The_Penitent_Lord:
+  MobType: ZOMBIFIED_PIGLIN
+  Display: "&d&lThe Penitent Lord"
+  Health: 2500
+  Damage: 35
+  Armor: 25
+  Faction: Nightreign_Bosses
+  Disguise:
+    Type: PLAYER
+    Skin: "PenitentLord" # Skin một vị vua sa ngã, cao quý nhưng mục ruỗng
+    Player: "&d&lThe Penitent Lord"
+  Options:
+    MovementSpeed: 0.26
+    KnockbackResistance: 0.8
+    FollowRange: 45
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: false
+  Mechanics:
+    - Boss
+  Skills:
+    - message{m="&d<mob.name>: &oForgive me..."} @p >0 ~onCombat
+    - skill{s=SorrowfulSweep} @PIR{r=4;a=360} ~onTimer:200
+    - skill{s=SummonPenitentSpirits} @self ~onDamaged <60% 1
+    - skill{s=RoyalThrustCombo} @target ~onAttack 0.25
+  Equipment:
+    - DIAMOND_SWORD{display="&dBlade of Sorrow"}:0
+    - DIAMOND_CHESTPLATE{display="&dPenitent Lord's Plate"}:2
+    - CROWN_OF_SORROW{item=GOLDEN_HELMET}:1
+  Drops:
+    - droptable{d=PenitentLord_Drops} 1 1.0
+    - exp 3500
+
+# TIER 5 - RARE (MAJOR BOSS) 1/1
+Starscourge_Behemoth:
+  MobType: RAVAGER
+  Display: "&5&lStarscourge Behemoth"
+  Health: 2800
+  Damage: 40
+  Armor: 30
+  Faction: Nightreign_Bosses
+  Options:
+    MovementSpeed: 0.28
+    KnockbackResistance: 1.0
+    FollowRange: 60
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: false
+  Mechanics:
+    - Boss
+  Aura:
+    - nearby{d=15;skill=CosmicPressure}
+  Skills:
+    - sound{s=entity.ender_dragon.growl;p=1.2} @self ~onCombat
+    - skill{s=MeteorCrash} @p >0 ~onTimer:400
+    - skill{s=StarscourgeCharge} @target ~onAttack 0.3
+    - skill{s=GravityWell} @PIR{r=20} ~onDamaged <60% 1
+  Drops:
+    - droptable{d=Starscourge_Drops} 1 1.0
+    - exp 5000
+    - STARCOURGE_FRAGMENT{item=NETHER_STAR;name="&5Starscourge Fragment"} 1 1.0
+
+# TIER 5 - UNIQUE (FINAL BOSS) 1/1
+The_Umbral_King_Vorlag:
+  MobType: WITHER
+  Display: "&5&l&k# &d&lThe Umbral King, Vorlag &5&l&k#"
+  Health: 3500
+  Damage: 45
+  Armor: 35
+  Faction: Nightreign_King
+  Options:
+    MovementSpeed: 0.3
+    KnockbackResistance: 1.0
+    FollowRange: 80
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: false
+    MaxCombatDistance: 60
+  Mechanics:
+    - Boss
+  Skills:
+    - skill{s=Vorlag_Intro} @self ~onSpawn
+    - skill{s=Vorlag_Phase1_Handler} @self ~onTimer:20 {c=isAlive}
+    - skill{s=Vorlag_EnterPhase2} @self ~onDamaged <2310 1
+    - skill{s=Vorlag_EnterPhase3} @self ~onDamaged <1155 1
+    - skill{s=Vorlag_DeathSequence} @self ~onDeath
+  Drops:
+    - droptable{d=Vorlag_Final_Drops} 1 1.0
+    - command{c="mm broadcast &d&lThe Umbral King has fallen! A new dawn breaks."} @p >0 ~onDeath
+    - exp 10000

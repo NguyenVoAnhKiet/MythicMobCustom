@@ -1,0 +1,46 @@
+# =================================================================
+# NIGHTREIGN ITEMS - TIER 2
+# Các vật phẩm liên quan đến hầm mộ, bệnh dịch, và các sách phép cấp trung.
+# =================================================================
+
+# Vật phẩm tùy chỉnh cho DropTable của mob Rare
+Grave_Moss:
+  Id: MOSS_BLOCK
+  Display: "&2Grave Moss"
+  Lore:
+    - "&7A strange, damp moss that only grows"
+    - "&7in the darkest of crypts."
+    - "&7It feels cold to the touch."
+
+Tainted_Blood_Vial:
+  Id: POTION
+  Color: 100,0,0 # Màu đỏ sẫm
+  Display: "&aTainted Blood Vial"
+  Lore:
+    - "&7A vial filled with the dark, viscous"
+    - "&7blood of a tainted beast."
+    - "&8Handle with extreme caution."
+
+# Vật phẩm đặc biệt của mob Unique "Keeper of the Mausoleum"
+Mausoleum_Key:
+  Id: TRIPWIRE_HOOK
+  Display: "&a&lMausoleum Key"
+  Lore:
+    - "&7A heavy, ornate key, cold and ancient."
+    - "&7It seems to hum with a faint energy,"
+    - "&7longing to unlock a forgotten door."
+    - ""
+    - "&8The inscription is unreadable."
+  Enchantments:
+    - LUCK:1 # Chỉ để tạo hiệu ứng phát sáng
+
+# Sách kỹ năng cấp trung
+EnchantedBook_Unbreaking1:
+  Id: ENCHANTED_BOOK
+  Enchantments:
+    - DURABILITY:1
+
+EnchantedBook_Smite2:
+  Id: ENCHANTED_BOOK
+  Enchantments:
+    - DAMAGE_UNDEAD:2

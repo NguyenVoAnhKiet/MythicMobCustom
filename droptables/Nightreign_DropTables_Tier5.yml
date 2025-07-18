@@ -1,0 +1,52 @@
+# =================================================================
+# NIGHTREIGN DROPTABLES - TIER 5
+# Bảng rơi đồ cho các con trùm cuối cùng của thế giới.
+# =================================================================
+
+Gatekeeper_Drops:
+  # Phần thưởng khi đánh bại "Eclipsed Gatekeeper".
+  # Mục tiêu: Cung cấp vật liệu độc nhất và một lượng lớn tài nguyên cao cấp.
+  Conditions: []
+  Drops:
+    - exp 3000-3500 1 1.0 # Luôn rơi kinh nghiệm
+    - Gatekeeper_Soul 1 1.0 # Luôn rơi Linh Hồn
+    - EMERALD_BLOCK 5-10 1 1.0 # Luôn rơi khối Emerald
+    - NETHERITE_INGOT 1-3 0.5 # 50% cơ hội rơi phôi Netherite
+    - DIAMOND_BLOCK 4-8 1 1.0 # Luôn rơi nhiều khối kim cương
+
+PenitentLord_Drops:
+  # Phần thưởng khi đánh bại "The Penitent Lord".
+  # Mục tiêu: Cung cấp các mảnh vỡ của trang bị hoàng gia để chế tạo lại.
+  Conditions: []
+  Drops:
+    - exp 3500-4000 1 1.0 # Luôn rơi kinh nghiệm
+    - Crown_of_Sorrow 1 1.0 # Luôn rơi Vương miện
+    - Blade_of_Sorrow_Hilt 1 1.0 # Luôn rơi chuôi kiếm
+    - EMERALD_BLOCK 8-12 1 1.0 # Luôn rơi khối Emerald
+    - GOLD_BLOCK 10-20 1 1.0 # Luôn rơi rất nhiều khối vàng
+
+Starscourge_Drops:
+  # Phần thưởng khi đánh bại "Starscourge Behemoth".
+  # Mục tiêu: Cung cấp vật liệu chế tạo vũ khí/trang bị vũ trụ.
+  Conditions: []
+  Drops:
+    - exp 5000-6000 1 1.0 # Luôn rơi kinh nghiệm
+    - Starscourge_Fragment 1 1.0 # Luôn rơi Mảnh Sao
+    - EMERALD_BLOCK 10-15 1 1.0 # Luôn rơi khối Emerald
+    - NETHERITE_BLOCK 1-2 0.3 # 30% cơ hội rơi khối Netherite
+    - SHULKER_SHELL 2-5 0.8 # 80% cơ hội rơi vỏ Shulker
+
+Vorlag_Final_Drops:
+  # Phần thưởng cuối cùng khi đánh bại "The Umbral King, Vorlag".
+  # Mục tiêu: Phần thưởng tối thượng, đánh dấu sự kết thúc của trò chơi.
+  Conditions: []
+  Drops:
+    # Phần thưởng đảm bảo, mang tính biểu tượng
+    - exp 10000-15000 1 1.0 # Luôn rơi một lượng kinh nghiệm khổng lồ
+    - Heart_of_the_Nightreign 1 1.0 # Luôn rơi Trái Tim Của Nightreign
+    - Vorlag_True_Crown 1 1.0 # Luôn rơi Vương miện thật
+
+    # Phần thưởng vật chất tối thượng
+    - EMERALD_BLOCK 32-64 1 1.0 # Luôn rơi một kho báu Emerald
+    - NETHERITE_BLOCK 5-8 1 1.0 # Luôn rơi một lượng lớn Netherite
+    - ENCHANTED_GOLDEN_APPLE 5-10 1 1.0 # Luôn rơi nhiều táo vàng phù phép

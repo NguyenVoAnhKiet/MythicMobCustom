@@ -1,0 +1,40 @@
+# =================================================================
+# NIGHTREIGN DROPTABLES - TIER 3
+# Bảng rơi đồ cho các mob Rare và Unique của Tier 3.
+# =================================================================
+
+FellBranded_Rare_Drops:
+  # Phần thưởng dành cho 2 mob Rare: Cursed Greatsword Vindicator, Abyss-touched Sorcerer.
+  # Mục tiêu: Cung cấp tài nguyên giá trị, vật liệu chế tạo hiếm và cơ hội nhận trang bị tốt.
+  Conditions: []
+  Drops:
+    # Tiền tệ & Vật liệu cơ bản
+    - exp 250-300 1 1.0 # Luôn rơi kinh nghiệm
+    - EMERALD 5-10 0.85 # 85% cơ hội rơi 5-10 Emerald
+    - DIAMOND 1-2 0.1 # 10% cơ hội rơi kim cương
+
+    # Vật phẩm tùy chỉnh
+    - Fell_Curse_Shard_Fragment 1-3 0.5 # 50% cơ hội rơi mảnh Lời Nguyền
+    - Cursed_Effigy 1 0.2 # 20% cơ hội rơi Hình Nhân
+    - Abyssal_Tome_Page 1 0.2 # 20% cơ hội rơi Trang Sách Vực Thẳm
+
+    # Trang bị & Sách phép (phần thưởng hiếm)
+    - DIAMOND_CHESTPLATE{durability=0.7} 1 0.05 # 5% cơ hội rơi giáp kim cương (70% độ bền)
+    - EnchantedBook_Sharpness2 1 0.12 # 12% cơ hội rơi sách Sharpness 2
+
+Morgath_Unique_Drops:
+  # Phần thưởng đặc biệt khi đánh bại mob Unique "Morgath, The Unchained".
+  # Mục tiêu: Phần thưởng hoành tráng, độc nhất và cực kỳ giá trị.
+  Conditions: []
+  Drops:
+    # Phần thưởng đảm bảo
+    - exp 800-1000 1 1.0 # Luôn rơi rất nhiều kinh nghiệm
+    - Morgath_Broken_Chain 1 1.0 # Luôn rơi Dây Xích Vỡ
+    - NETHERITE_AXE{enchants=SHARPNESS:3;durability=0.5} 1 1.0 # Luôn rơi vũ khí của hắn (50% độ bền)
+    - EMERALD 25-40 1 1.0 # Luôn rơi một lượng lớn Emerald
+
+    # Phần thưởng hiếm và vật liệu cao cấp
+    - Heart_of_Rage 1-2 0.7 # 70% cơ hội rơi Trái Tim Cuồng Nộ
+    - NETHERITE_INGOT 1 0.1 # 10% cơ hội rơi phôi Netherite
+    - EnchantedBook_FireProtection2 1 0.4 # 40% cơ hội rơi sách Fire Protection 2
+    - DIAMOND_BLOCK 1 0.2 # 20% cơ hội rơi khối kim cương

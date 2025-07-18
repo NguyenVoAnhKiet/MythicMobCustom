@@ -1,63 +1,139 @@
-# Tier4_Skills.yml
-# Kỹ năng cho Crucible-Forged Mobs (Tier 4)
+# =================================================================
+# TIER 4: CRUCIBLE-FORGED SKILLS
+# Kỹ năng quy mô lớn, tập trung vào các đòn tấn công AoE mạnh,
+# cơ chế phòng thủ độc đáo và cảm giác "nặng đô" của các mini-boss.
+# =================================================================
 
-# Lich Skills
-SoulDrain:
+# --- KỸ NĂNG CHO MOB COMMON ---
+
+StoneStomp:
+  Cooldown: 10
+  Skills:
+    - sound{s=entity.iron_golem.damage;p=0.7;v=1.5} @self
+    - effect:particles{p=BLOCK_CRACK;m=STONE;a=100;hS=4;vS=0.1} @self
+    # Gây sát thương và hất tung kẻ địch ở gần
+    - damage{a=15} @PIR{r=4}
+    - velocity{y=0.8} @PIR{r=4}
+
+HeavySlam:
+  Cooldown: 4
+  Skills:
+    - damage{a=20} @target
+    - sound{s=entity.iron_golem.attack;p=0.9} @self
+    - effect:particles{p=EXPLOSION;a=1} @target
+
+OverheatingVent:
+  Cooldown: 1
+  Skills:
+    # Xả hơi nóng khi nhận sát thương, gây sát thương theo thời gian
+    - message{m="<mob.name>'s &6core overheats!"} @PIR{r=25}
+    - sound{s=block.furnace.fire_crackle} @self
+    - damage{a=5;i=true;repeat=4;repeatInterval=20} @PIR{r=5} # 5 dmg mỗi giây trong 4 giây
+    - effect:particlering{p=FLAME;a=50;r=5} @self
+
+DrillingThrust:
+  Cooldown: 5
+  Skills:
+    - sound{s=entity.drowned.shoot;p=1.5} @self
+    # Gây sát thương và giảm độ bền giáp của mục tiêu
+    - damage{a=22} @target
+    - durability{a=25;p=ARMOR} @target
+    - effect:particles{p=CRIT_MAGIC;a=30} @target
+
+SolarFlare:
+  Cooldown: 8
+  Skills:
+    - sound{s=item.firecharge.use} @self
+    # Bắn một quả cầu năng lượng mặt trời phát nổ
+    - projectile{onHit=SolarFlareHit;v=15;r=8} @target
+SolarFlareHit:
+  Skills:
+    - damage{a=21} @EIR{r=4}
+    - setonfire{d=100} @EIR{r=4} # Đốt cháy trong 5 giây
+    - effect:explosion{p=FIREWORKS_SPARK;a=2} @origin
+    - sound{s=entity.firework_rocket.blast} @origin
+
+MoltenArmor:
   Cooldown: 25
   Skills:
-    - damage{amount=6;type=MAGIC} @target
-    - heal{amount=6} @self
-    - effect:particles{p=soul;amount=20} @target
-    - sound{s=entity.wither.spawn;volume=0.5} @self
+    # Tăng giáp và phản lại sát thương cận chiến
+    - message{m="<mob.name> &6is covered in molten armor!"} @PIR{r=30}
+    - sound{s=block.lava.pop} @self
+    - potion{type=FIRE_RESISTANCE;d=400;l=0} @self
+    - potion{type=ABSORPTION;d=200;l=4} @self # Thêm 4 tim máu tạm thời
+    - addtag{t=MoltenSkin;d=200} @self # Thêm tag trong 10 giây
+# Bạn cần một kỹ năng riêng để xử lý tag MoltenSkin
+# Ví dụ: - skill{s=MoltenSkinDamage} @attacker ~onDamaged{c=hasAttackType(MELEE)} 0.5
 
-SummonMinions:
-  Cooldown: 45
-  Skills:
-    - summon{type=ZOMBIE;amount=3;radius=3} @self
-    - effect:particles{p=soul_fire_flame;amount=30} @self
-    - sound{s=entity.evoker.cast_spell;volume=1} @self
+# --- KỸ NĂNG CHO MOB RARE ---
 
-# Bloodwitch Skills
-BloodCurse:
-  Cooldown: 30
+DragonBreathWave:
+  Cooldown: 15
   Skills:
-    - potion{type=POISON;duration=100;level=2} @target
-    - potion{type=WEAKNESS;duration=100;level=1} @target
-    - effect:particles{p=crimson_spore;amount=20} @target
-    - sound{s=entity.witch.drink;volume=1} @self
+    - message{m="<mob.name> &cunleashes a wave of dragon fire!"} @PIR{r=35}
+    - sound{s=entity.ender_dragon.shoot;p=1.1} @self
+    # Tạo một vùng hơi thở rồng tồn tại trong một khoảng thời gian
+    - projectile{type=DRAGON_FIREBALL;v=20;life=80} @target
 
-# Pyromancer Skills
-MeteorShower:
-  Cooldown: 40
+ThunderousLeap:
+  Cooldown: 8
   Skills:
-    - summon{m=MeteorPointer;a=15;r=30}
+    - sound{s=entity.generic.explode;p=0.9} @self
+    # Nhảy tới vị trí mục tiêu và tạo ra một vụ nổ khi tiếp đất
+    - leap{loc=<target.l>;v=20;f=15} @self
+    - delay 15 # Chờ đến khi gần tiếp đất
+    - damage{a=25} @PIR{r=5}
+    - effect:explosion{p=EXPLOSION_LARGE} @self
+    - sound{s=entity.lightning_bolt.thunder;v=1.5} @self
 
-MeteorPointerSpawn:
+MagmaEruption:
+  Cooldown: 1
   Skills:
-    - potion{type=INVISIBILITY;d=2000;l=1} @self
-    - delay 200
-    - skill{s=MeteorPointerFinish}
+    # Khi nhận sát thương, có cơ hội phun ra các khối magma
+    - sound{s=entity.magma_cube.jump} @self
+    - throw{velocity=10;velocityY=10;mob=MagmaCubelet;amount=3;spread=15} @self
+# (Bạn cần tạo một mob tên MagmaCubelet, ví dụ là một Magma Cube nhỏ)
 
-MeteorPointerFinish:
+ColossalSlam:
+  Cooldown: 5
   Skills:
-    - projectile{onTick=MeteorTick;onEnd=MeteorEnd;v=30;i=1;hR=2;vR=2;syo=75;sfo=20;mr=1000;d=500;sE=false} @Self
-    - delay 500
-    - remove{m=MeteorPointer} @Self
+    - damage{a=27} @target
+    - sound{s=entity.slime.attack;p=0.7} @self
+    # Gây hiệu ứng chậm chạp cực mạnh
+    - potion{type=SLOW;d=60;l=4} @target
 
-MeteorTick:
-  Skills:
-    - effect:particles{p=flame;a=30;vS=1.5;hS=1.5} @Origin
-    - effect:particles{p=largesmoke;a=15;vS=1;hS=1} @Origin
-    - effect:particles{p=largeexplosion;a=3;vS=0.75;hS=0.75} @Origin
+# --- KỸ NĂNG CHO MOB UNIQUE ---
 
-MeteorEnd:
+PressureOfAges:
   Skills:
-    - explosion{blockdamage=false;fire=true;yield=5} @Origin
-    - remove{m=MeteorPointer} @Self
+    # Hào quang gây mệt mỏi khi đào
+    - potion{type=MINING_FATIGUE;d=20;l=1;o=true} @PIR{r=20}
 
-Inferno:
-  Cooldown: 25
+AncientRoar:
+  Cooldown: 20
   Skills:
-    - effect:particles{p=flame;amount=50;radius=5} @self
-    - damage{amount=8;type=FIRE;radius=5} @PlayersInRadius{r=5}
-    - burn{duration=100} @PlayersInRadius{r=5}
+    - message{m="&6<mob.name>'s roar echoes through the ages!"} @p >0
+    - sound{s=entity.wither.spawn;p=1.2;v=1.5} @self
+    # Đẩy lùi tất cả người chơi và gây suy yếu
+    - velocity{mode=AWAY;s=2.5,0.5,2.5} @PIR{r=30}
+    - potion{type=WEAKNESS;d=200;l=1} @PIR{r=30}
+
+GroundSlam_T4:
+  Cooldown: 12
+  Skills:
+    - effect:particlering{p=BLOCK_CRACK;m=STONE;a=150;r=6;points=32} @self
+    - delay 20
+    - damage{a=30;pk=true} @PIR{r=6}
+    - effect:explosion{p=EXPLOSION_HUGE} @self
+    - sound{s=entity.ravager.stunned;p=1.2} @self
+
+Sentinel_Phase2_Empower:
+  Cooldown: 1
+  Skills:
+    - message{m="&6The First Sentinel awakens its true power!"} @p >0
+    - sound{s=entity.iron_golem.repair;p=1.5;v=1.5} @self
+    - setfaction{f=Crucible_Enraged} @self
+    # Hồi phục một phần máu và tăng sức mạnh
+    - healpercent{p=0.25} @self
+    - potion{type=INCREASE_DAMAGE;d=9999;l=0} @self
+    - potion{type=RESISTANCE;d=9999;l=0} @self

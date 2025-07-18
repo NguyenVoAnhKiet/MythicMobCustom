@@ -1,0 +1,92 @@
+# =================================================================
+# --- NIGHTREIGN RANDOM SPAWNERS ---
+# Đặt các spawner này vào thế giới game để triệu hồi mob ngẫu nhiên.
+# Chúng sử dụng một "mẹo" là triệu hồi một Armor Stand vô hình,
+# sau đó Armor Stand này sẽ ngay lập tức sử dụng skill phức tạp để
+# triệu hồi mob cuối cùng và tự xóa bản thân.
+# =================================================================
+
+# Spawner cho khu vực Đồng Bằng - Khu vực khởi đầu (chủ yếu Tier 1, ít Tier 2)
+Plains_Spawner:
+  Action: ADD # Thêm mob vào thế giới, không thay thế mob có sẵn.
+  LeashRange: 32 # Mob sẽ không đi quá 32 block so với điểm spawn.
+  MaxMobs: 5 # Tối đa 5 mob từ spawner này có thể tồn tại cùng lúc.
+  MobLevel: 1
+  Radius: 35 # Spawn mob trong bán kính 35 block xung quanh spawner.
+  UseTimer: true
+  CheckForPlayers: true
+  Cooldown: 15 # Cứ 15 giây lại cố gắng spawn một lần.
+  Mobs:
+    # Gọi placeholder mob cho khu vực tân thủ.
+    - Nightreign_Beginner 1
+
+# Spawner cho khu vực Rừng Bị Nguyền Rủa - Khu vực tầm trung (chủ yếu Tier 2, có Tier 1 và 3)
+CursedForest_Spawner:
+  Action: ADD
+  LeashRange: 40
+  MaxMobs: 4 # Khu vực khó hơn, ít mob hơn nhưng chất lượng hơn.
+  MobLevel: 1
+  Radius: 30
+  UseTimer: true
+  CheckForPlayers: true
+  Cooldown: 20 # Thời gian spawn lâu hơn một chút.
+  Mobs:
+    # Gọi placeholder mob cho khu vực tầm trung.
+    - Nightreign_MidGame 1
+
+# Spawner cho khu vực Vùng Đất Hoang Núi Lửa - Khu vực endgame (chủ yếu Tier 3 & 4)
+VolcanicWastes_Spawner:
+  Action: ADD
+  LeashRange: 50
+  MaxMobs: 2 # Rất ít mob, nhưng mỗi con là một thử thách.
+  MobLevel: 1
+  Radius: 40
+  UseTimer: true
+  CheckForPlayers: true
+  Cooldown: 45 # Thời gian spawn rất lâu, tạo cảm giác hoang vắng và nguy hiểm.
+  Mobs:
+    # Gọi placeholder mob mặc định (khó nhất).
+    - Nightreign_Default 1
+
+# =================================================================
+# --- ĐỊNH NGHĨA MOB THAY THẾ (PLACEHOLDER) ---
+# Đây là những con mob vô hình, tồn tại trong một tích tắc để gọi skill.
+# Đừng triệu hồi trực tiếp những con mob này.
+# =================================================================
+
+Nightreign_Beginner:
+  MobType: ARMOR_STAND
+  Options:
+    Invisible: true
+    Invincible: true
+    Marker: true
+    Despawn: true
+  Skills:
+    # Khi được spawn, ngay lập tức gọi skill logic cho khu vực tân thủ.
+    - skill{s=MasterSpawner_BeginnerZone} @self ~onSpawn
+    # Tự xóa bản thân ngay sau khi hoàn thành nhiệm vụ.
+    - remove @self ~onSpawn
+
+Nightreign_MidGame:
+  MobType: ARMOR_STAND
+  Options:
+    Invisible: true
+    Invincible: true
+    Marker: true
+    Despawn: true
+  Skills:
+    # Khi được spawn, ngay lập tức gọi skill logic cho khu vực tầm trung.
+    - skill{s=MasterSpawner_MidGameZone} @self ~onSpawn
+    - remove @self ~onSpawn
+
+Nightreign_Default:
+  MobType: ARMOR_STAND
+  Options:
+    Invisible: true
+    Invincible: true
+    Marker: true
+    Despawn: true
+  Skills:
+    # Khi được spawn, ngay lập tức gọi skill logic mặc định (khó nhất).
+    - skill{s=MasterSpawner_Default} @self ~onSpawn
+    - remove @self ~onSpawn

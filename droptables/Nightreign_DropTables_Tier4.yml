@@ -1,0 +1,39 @@
+# =================================================================
+# NIGHTREIGN DROPTABLES - TIER 4
+# Bảng rơi đồ cho các mob Rare và Unique của Tier 4.
+# =================================================================
+
+Crucible_Rare_Drops:
+  # Phần thưởng dành cho 2 mob Rare: Ancient Dragonsworn Knight, Embered Colossus.
+  # Mục tiêu: Cung cấp vật liệu chế tạo huyền thoại và cơ hội nhận trang bị endgame.
+  Conditions: []
+  Drops:
+    # Tiền tệ & Vật liệu cơ bản
+    - exp 800-1000 1 1.0 # Luôn rơi kinh nghiệm
+    - EMERALD 15-25 0.9 # 90% cơ hội rơi 15-25 Emerald
+    - DIAMOND_BLOCK 1-2 0.15 # 15% cơ hội rơi khối kim cương
+
+    # Vật phẩm tùy chỉnh
+    - Dragonsworn_Scale 1-2 0.3 # 30% cơ hội rơi Vảy Rồng
+    - Colossal_Ember 1 0.3 # 30% cơ hội rơi Than Khổng Lồ
+
+    # Trang bị & Sách phép (phần thưởng hiếm)
+    - NETHERITE_CHESTPLATE{durability=0.6} 1 0.04 # 4% cơ hội rơi giáp Netherite (60% độ bền)
+    - EnchantedBook_Protection3 1 0.1 # 10% cơ hội rơi sách Protection 3
+
+FirstSentinel_Unique_Drops:
+  # Phần thưởng đặc biệt khi đánh bại mob Unique "The First Sentinel".
+  # Mục tiêu: Phần thưởng độc nhất, có giá trị lịch sử và sức mạnh to lớn.
+  Conditions: []
+  Drops:
+    # Phần thưởng đảm bảo
+    - exp 2000-2500 1 1.0 # Luôn rơi rất nhiều kinh nghiệm
+    - Tablet_of_the_First_Age 1 1.0 # Luôn rơi Phiến Đá Cổ Đại
+    - EMERALD 40-64 1 1.0 # Luôn rơi một lượng lớn Emerald
+    - DIAMOND_BLOCK 3-5 1 1.0 # Luôn rơi nhiều khối kim cương
+
+    # Phần thưởng hiếm và vật liệu cao cấp
+    - Primordial_Essence 1-3 0.8 # 80% cơ hội rơi Tinh Chất Sơ Khai
+    - NETHERITE_INGOT 1-2 0.25 # 25% cơ hội rơi phôi Netherite
+    - ANCIENT_DEBRIS 4-8 0.5 # 50% cơ hội rơi Mảnh Vỡ Cổ Đại
+    - ENCHANTED_GOLDEN_APPLE 1 0.1 # 10% cơ hội rơi táo vàng phù phép

@@ -1,0 +1,71 @@
+# =================================================================
+# NIGHTREIGN ITEMS - TIER 4
+# Các vật liệu cổ đại, lõi sức mạnh, và các vật phẩm gần như huyền thoại.
+# =================================================================
+
+# Vật phẩm rơi ra từ mob Common
+Automaton_Core:
+  Id: HEART_OF_THE_SEA
+  Display: "&6Automaton Core"
+  Lore:
+    - "&7The surprisingly intricate power source"
+    - "&7of an ancient automaton."
+    - "&7It hums with a faint, rhythmic energy."
+    - ""
+    - "&8A marvel of forgotten engineering."
+  Enchantments:
+    - LUCK:1 # Hiệu ứng phát sáng
+
+Heart_of_the_Crucible:
+  Id: BLAZE_ROD
+  Display: "&6&lHeart of the Crucible"
+  Lore:
+    - "&7A rod of concentrated, sentient flame"
+    - "&7that burns with the heat of a star."
+    - "&7It is the essence of the Crucible itself."
+    - "&8Never cools down."
+
+# Vật phẩm tùy chỉnh cho DropTable của mob Rare
+Dragonsworn_Scale:
+  Id: PHANTOM_MEMBRANE
+  Display: "&cDragonsworn Scale"
+  Lore:
+    - "&7A large, metallic scale from a knight"
+    - "&7who pledged allegiance to the ancient dragons."
+    - "&7It is nearly indestructible."
+  Enchantments:
+    - PROTECTION_FIRE:1
+
+Colossal_Ember:
+  Id: MAGMA_CREAM
+  Display: "&c&lColossal Ember"
+  Lore:
+    - "&7A massive, semi-solid glob of living magma."
+    - "&7It contains enough latent heat to power"
+    - "&7a forge for a thousand years."
+
+# Vật phẩm đặc biệt của mob Unique "The First Sentinel"
+Tablet_of_the_First_Age:
+  Id: MUSIC_DISC_11 # Trông giống một mảnh vỡ màu đen
+  Display: "&6&lTablet of the First Age"
+  Lore:
+    - "&7A stone tablet covered in primordial runes."
+    - "&7It details the creation of the first"
+    - "&7sentinels, a lost art of breathing"
+    - "&7life into stone and steel."
+    - ""
+    - "&8A historical artifact of immense value."
+
+Primordial_Essence:
+  Id: ECHO_SHARD
+  Display: "&6Primordial Essence"
+  Lore:
+    - "&7A crystallized shard of pure, raw creation."
+    - "&7It holds the potential to imbue items"
+    - "&7with a fraction of the world's nascent power."
+
+# Sách kỹ năng huyền thoại
+EnchantedBook_Protection3:
+  Id: ENCHANTED_BOOK
+  Enchantments:
+    - PROTECTION_ENVIRONMENTAL:3

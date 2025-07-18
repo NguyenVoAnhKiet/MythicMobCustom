@@ -1,0 +1,222 @@
+# =================================================================
+# NIGHTREIGN MOB PACK - TIER 3: FELL-BRANDED (COMPLETE)
+# Concept: Những chiến binh và pháp sư điên cuồng mang lời nguyền, cực kỳ hung hãn.
+# Gồm: 5 Common, 2 Rare, 1 Unique
+# =================================================================
+
+# TIER 3 - COMMON 1/5
+Branded_Reaver:
+  MobType: ZOMBIFIED_PIGLIN
+  Display: "&cBranded Reaver"
+  Health: 250
+  Damage: 12
+  Armor: 14
+  Faction: Fell_Branded
+  Options:
+    MovementSpeed: 0.3
+    KnockbackResistance: 0.3
+    FollowRange: 30
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    Despawn: true
+  Skills:
+    - skill{s=ReaverCharge} @target ~onCombat
+    - potion{type=INCREASE_DAMAGE;d=80;l=0} @self ~onDamaged <50% 1
+    - effect:particles{p=FLAME;a=15;hS=0.2;vS=0.2} @self ~onAttack
+    - sound{s=entity.zombified_piglin.angry;v=1.2;p=1.1} @self ~onCombat
+  Equipment:
+    - GOLDEN_AXE:0
+    - IRON_CHESTPLATE:2
+  Drops:
+    - exp 75-90
+    - GOLD_NUGGET 3-8 0.7
+    - Fell_Curse_Shard_Fragment{item=AMETHYST_SHARD;name="&cFell-Curse Shard Fragment"} 1 0.1
+
+# TIER 3 - COMMON 2/5
+Fell-Flame_Pyromancer:
+  MobType: BLAZE
+  Display: "&cFell-Flame Pyromancer"
+  Health: 260
+  Damage: 13
+  Armor: 8
+  Faction: Fell_Branded
+  Options:
+    MovementSpeed: 0.25
+    KnockbackResistance: 0.2
+    FollowRange: 35
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - skill{s=FireballVolley} @target ~onTimer:100
+    - skill{s=FlameWall} @target ~onDamaged <60% 0.2
+    - sound{s=entity.blaze.shoot;p=0.8} @self ~onAttack
+  Drops:
+    - exp 80-100
+    - BLAZE_ROD 0-1 0.5
+    - GUNPOWDER 1-3 0.4
+    - CHARCOAL 1-2 0.6
+
+# TIER 3 - COMMON 3/5
+Oathbreaker_Knight:
+  MobType: ZOMBIE
+  Display: "&cOathbreaker Knight"
+  Health: 280
+  Damage: 12
+  Armor: 18
+  Faction: Fell_Branded
+  Options:
+    MovementSpeed: 0.23
+    KnockbackResistance: 0.6
+    FollowRange: 28
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    Despawn: true
+  Skills:
+    - skill{s=SunderingStrike} @target ~onAttack 0.25
+    - skill{s=IronWill} @self ~onDamaged <50% 1
+    - effect:particles{p=CRIT;a=20} @self ~onAttack 0.25
+  Equipment:
+    - DIAMOND_SWORD:0
+    - SHIELD:5
+    - IRON_HELMET:1
+    - DIAMOND_CHESTPLATE:2
+  Drops:
+    - exp 90-110
+    - IRON_INGOT 2-4 0.6
+    - DIAMOND 0-1 0.02
+    - CRACKED_SHIELD{item=SHIELD;name="&7Cracked Shield"} 1 0.05
+
+# TIER 3 - COMMON 4/5
+Heretic_Sorcerer:
+  MobType: EVOKER
+  Display: "&cHeretic Sorcerer"
+  Health: 270
+  Damage: 13
+  Armor: 10
+  Faction: Fell_Branded
+  Options:
+    MovementSpeed: 0.26
+    KnockbackResistance: 0.2
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - skill{s=SummonFellWisps} @self ~onTimer:200
+    - skill{s=DarkBolt} @target ~onAttack
+    - sound{s=entity.evoker.cast_spell;p=0.9} @self ~onAttack
+  Equipment:
+    - BOOK:0
+  Drops:
+    - exp 100-120
+    - BOOK 1 0.3
+    - LAPIS_LAZULI 5-10 0.5
+    - FORBIDDEN_SCROLL{item=PAPER;name="&5Forbidden Scroll"} 1 0.08
+
+# TIER 3 - COMMON 5/5
+Frenzied_Beast:
+  MobType: HOGLIN
+  Display: "&cFrenzied Beast"
+  Health: 300
+  Damage: 12
+  Armor: 6
+  Faction: Tainted_Beasts
+  Options:
+    MovementSpeed: 0.32
+    KnockbackResistance: 0.4
+    FollowRange: 25
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - skill{s=FrenziedRampage} @self ~onCombat
+    - damage{a=5;pk=true} @target ~onAttack
+    - sound{s=entity.hoglin.angry;p=1.2} @self ~onCombat
+  Drops:
+    - exp 85-105
+    - LEATHER 3-5 0.7
+    - PORKCHOP 2-4 0.6
+    - BEAST_FANG{item=GHAST_TEAR;name="&fBeast Fang"} 1-2 0.15
+
+# TIER 3 - RARE 1/2
+Cursed_Greatsword_Vindicator:
+  MobType: VINDICATOR
+  Display: "&4Cursed Greatsword Vindicator"
+  Health: 350
+  Damage: 16
+  Armor: 16
+  Faction: Fell_Branded_Elite
+  Options:
+    MovementSpeed: 0.28
+    KnockbackResistance: 0.7
+    FollowRange: 30
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: true
+  Skills:
+    - skill{s=ExecutionersChop} @target ~onAttack
+    - skill{s=BattleShout} @PIR{r=15} ~onCombat
+    - sound{s=entity.vindicator.celebrate} @self ~onKillPlayer
+  Equipment:
+    - DIAMOND_AXE:0
+    - DAMAGED_DIAMOND_CHESTPLATE:2
+  Drops:
+    - droptable{d=FellBranded_Rare_Drops} 1 1.0
+    - exp 250
+
+# TIER 3 - RARE 2/2
+Abyss-touched_Sorcerer:
+  MobType: WITCH
+  Display: "&4Abyss-touched Sorcerer"
+  Health: 380
+  Damage: 15
+  Armor: 12
+  Faction: Fell_Branded_Elite
+  Options:
+    MovementSpeed: 0.25
+    KnockbackResistance: 0.3
+    FollowRange: 35
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: true
+  Skills:
+    - skill{s=AbyssalGrasp} @target ~onTimer:180
+    - skill{s=VoidBlast} @target ~onAttack
+    - teleport{r=15} @self ~onDamaged <80% 0.25
+  Drops:
+    - droptable{d=FellBranded_Rare_Drops} 1 1.0
+    - exp 280
+
+# TIER 3 - UNIQUE 1/1
+Morgath_The_Unchained:
+  MobType: ZOMBIFIED_PIGLIN
+  Display: "&c&lMorgath, The Unchained"
+  Health: 450
+  Damage: 18
+  Armor: 18
+  Faction: Nightreign_Bosses
+  Disguise:
+    Type: PLAYER
+    Skin: "MorgathTheUnchained" # Một skin chiến binh to lớn, bị nguyền rủa
+    Player: "&c&lMorgath, The Unchained"
+  Options:
+    MovementSpeed: 0.29
+    KnockbackResistance: 0.8
+    FollowRange: 35
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: false
+  Mechanics:
+    - Undead
+    - Boss
+  Aura:
+    - nearby{d=10;skill=CurseOfBinding}
+  Skills:
+    - message{m="&4<mob.name>: RRAAAAGHHH!"} @p >0 ~onCombat
+    - skill{s=UnchainedRage} @self ~onDamaged <50% 1
+    - skill{s=WorldBreaker} @target ~onTimer:250
+    - skill{s=MorgathChainPull} @target ~onAttack 0.1
+  Equipment:
+    - NETHERITE_AXE{enchants=SHARPNESS:3}:0
+    - BROKEN_NETHERITE_CHESTPLATE:2
+  Drops:
+    - droptable{d=Morgath_Unique_Drops} 1 1.0
+    - exp 800

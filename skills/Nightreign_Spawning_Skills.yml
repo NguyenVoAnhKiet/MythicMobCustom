@@ -1,0 +1,216 @@
+# =================================================================
+# --- NIGHTREIGN SPAWNING SKILLS ---
+# Hệ thống logic 2 tầng để triệu hồi mob ngẫu nhiên dựa trên
+# tần suất của Tier và Độ hiếm. (VERSION 2 - FIXED SYNTAX)
+# =================================================================
+
+# --- MASTER CALLERS (BƯỚC 1: CHỌN TIER) ---
+MasterSpawner_Default:
+  Skills:
+    - randomskill{skills=Call_Tier1_Spawner} 0.55
+    - randomskill{skills=Call_Tier2_Spawner} 0.25
+    - randomskill{skills=Call_Tier3_Spawner} 0.15
+    - randomskill{skills=Call_Tier4_Spawner} 0.05
+
+MasterSpawner_BeginnerZone:
+  Skills:
+    - randomskill{skills=Call_Tier1_Spawner} 0.90
+    - randomskill{skills=Call_Tier2_Spawner} 0.10
+
+MasterSpawner_MidGameZone:
+  Skills:
+    - randomskill{skills=Call_Tier1_Spawner} 0.20
+    - randomskill{skills=Call_Tier2_Spawner} 0.60
+    - randomskill{skills=Call_Tier3_Spawner} 0.20
+
+# --- TIER CALLERS (BƯỚC 2: CHỌN ĐỘ HIẾM) ---
+Call_Tier1_Spawner:
+  Skills:
+    - randomskill{skills=Spawn_T1_Common} 0.80
+    - randomskill{skills=Spawn_T1_Rare} 0.18
+    - randomskill{skills=Spawn_T1_Unique} 0.02
+
+Call_Tier2_Spawner:
+  Skills:
+    - randomskill{skills=Spawn_T2_Common} 0.75
+    - randomskill{skills=Spawn_T2_Rare} 0.23
+    - randomskill{skills=Spawn_T2_Unique} 0.02
+
+Call_Tier3_Spawner:
+  Skills:
+    - randomskill{skills=Spawn_T3_Common} 0.70
+    - randomskill{skills=Spawn_T3_Rare} 0.28
+    - randomskill{skills=Spawn_T3_Unique} 0.02
+
+Call_Tier4_Spawner:
+  Skills:
+    - randomskill{skills=Spawn_T4_Common} 0.65
+    - randomskill{skills=Spawn_T4_Rare} 0.33
+    - randomskill{skills=Spawn_T4_Unique} 0.02
+
+# --- RARITY SPAWNERS (BƯỚC 3: CHỌN MOB CỤ THỂ) ---
+
+# TIER 1
+Spawn_T1_Common:
+  Skills:
+    - randomskill{skills=Summon_Ashen_Footman,Summon_Hollow_Crossbowman,Summon_Broken_Sellsword,Summon_Exiled_Hunter,Summon_Rusted_Brawler,Summon_Forsaken_Militia,Summon_Dreg_Lookout,Summon_Tarnished_Pikeman}
+Spawn_T1_Rare:
+  Skills:
+    - randomskill{skills=Summon_Fallen_Vanguard,Summon_Grave_Warden,Summon_Mad_Jester}
+Spawn_T1_Unique:
+  Skills:
+    - skill{s=Summon_Redrick_the_Deserter}
+
+# TIER 2
+Spawn_T2_Common:
+  Skills:
+    - randomskill{skills=Summon_Carrion_Hound,Summon_Rotting_Undead,Summon_Crypt_Dweller,Summon_Grave_Hag,Summon_Bloodlicker_Stalker,Summon_Corpse-Bearer}
+Spawn_T2_Rare:
+  Skills:
+    - randomskill{skills=Summon_Sepulcher_Knight,Summon_Blood-starved_Fiend,Summon_Corpse-fed_Beast}
+Spawn_T2_Unique:
+  Skills:
+    - skill{s=Summon_Keeper_of_the_Mausoleum}
+
+# TIER 3
+Spawn_T3_Common:
+  Skills:
+    - randomskill{skills=Summon_Branded_Reaver,Summon_Fell-Flame_Pyromancer,Summon_Oathbreaker_Knight,Summon_Heretic_Sorcerer,Summon_Frenzied_Beast}
+Spawn_T3_Rare:
+  Skills:
+    - randomskill{skills=Summon_Cursed_Greatsword_Vindicator,Summon_Abyss-touched_Sorcerer}
+Spawn_T3_Unique:
+  Skills:
+    - skill{s=Summon_Morgath_The_Unchained}
+
+# TIER 4
+Spawn_T4_Common:
+  Skills:
+    - randomskill{skills=Summon_Primordial_Sentinel,Summon_Ruin_Automaton,Summon_Crucible_Aspect}
+Spawn_T4_Rare:
+  Skills:
+    - randomskill{skills=Summon_Ancient_Dragonsworn_Knight,Summon_Embered_Colossus}
+Spawn_T4_Unique:
+  Skills:
+    - skill{s=Summon_The_First_Sentinel}
+
+# =================================================================
+# --- ACTUAL SUMMONING SKILLS (ĐỊNH NGHĨA CHO MỖI MOB) ---
+# (ĐÃ SỬA LỖI CÚ PHÁP)
+# =================================================================
+
+# TIER 1 - SUMMONS
+Summon_Ashen_Footman:
+  Skills:
+    - summon{mob=Ashen_Footman;a=1;r=1} @self
+Summon_Hollow_Crossbowman:
+  Skills:
+    - summon{mob=Hollow_Crossbowman;a=1;r=1} @self
+Summon_Broken_Sellsword:
+  Skills:
+    - summon{mob=Broken_Sellsword;a=1;r=1} @self
+Summon_Exiled_Hunter:
+  Skills:
+    - summon{mob=Exiled_Hunter;a=1;r=1} @self
+Summon_Rusted_Brawler:
+  Skills:
+    - summon{mob=Rusted_Brawler;a=1;r=1} @self
+Summon_Forsaken_Militia:
+  Skills:
+    - summon{mob=Forsaken_Militia;a=1;r=1} @self
+Summon_Dreg_Lookout:
+  Skills:
+    - summon{mob=Dreg_Lookout;a=1;r=1} @self
+Summon_Tarnished_Pikeman:
+  Skills:
+    - summon{mob=Tarnished_Pikeman;a=1;r=1} @self
+Summon_Fallen_Vanguard:
+  Skills:
+    - summon{mob=Fallen_Vanguard;a=1;r=1} @self
+Summon_Grave_Warden:
+  Skills:
+    - summon{mob=Grave_Warden;a=1;r=1} @self
+Summon_Mad_Jester:
+  Skills:
+    - summon{mob=Mad_Jester;a=1;r=1} @self
+Summon_Redrick_the_Deserter:
+  Skills:
+    - summon{mob="Redrick_the_Deserter";a=1;r=1} @self
+
+# TIER 2 - SUMMONS
+Summon_Carrion_Hound:
+  Skills:
+    - summon{mob=Carrion_Hound;a=1;r=1} @self
+Summon_Rotting_Undead:
+  Skills:
+    - summon{mob=Rotting_Undead;a=1;r=1} @self
+Summon_Crypt_Dweller:
+  Skills:
+    - summon{mob=Crypt_Dweller;a=1;r=1} @self
+Summon_Grave_Hag:
+  Skills:
+    - summon{mob=Grave_Hag;a=1;r=1} @self
+Summon_Bloodlicker_Stalker:
+  Skills:
+    - summon{mob=Bloodlicker_Stalker;a=1;r=1} @self
+Summon_Corpse-Bearer:
+  Skills:
+    - summon{mob=Corpse-Bearer;a=1;r=1} @self
+Summon_Sepulcher_Knight:
+  Skills:
+    - summon{mob=Sepulcher_Knight;a=1;r=1} @self
+Summon_Blood-starved_Fiend:
+  Skills:
+    - summon{mob=Blood-starved_Fiend;a=1;r=1} @self
+Summon_Corpse-fed_Beast:
+  Skills:
+    - summon{mob=Corpse-fed_Beast;a=1;r=1} @self
+Summon_Keeper_of_the_Mausoleum:
+  Skills:
+    - summon{mob=Keeper_of_the_Mausoleum;a=1;r=1} @self
+
+# TIER 3 - SUMMONS
+Summon_Branded_Reaver:
+  Skills:
+    - summon{mob=Branded_Reaver;a=1;r=1} @self
+Summon_Fell-Flame_Pyromancer:
+  Skills:
+    - summon{mob=Fell-Flame_Pyromancer;a=1;r=1} @self
+Summon_Oathbreaker_Knight:
+  Skills:
+    - summon{mob=Oathbreaker_Knight;a=1;r=1} @self
+Summon_Heretic_Sorcerer:
+  Skills:
+    - summon{mob=Heretic_Sorcerer;a=1;r=1} @self
+Summon_Frenzied_Beast:
+  Skills:
+    - summon{mob=Frenzied_Beast;a=1;r=1} @self
+Summon_Cursed_Greatsword_Vindicator:
+  Skills:
+    - summon{mob=Cursed_Greatsword_Vindicator;a=1;r=1} @self
+Summon_Abyss-touched_Sorcerer:
+  Skills:
+    - summon{mob=Abyss-touched_Sorcerer;a=1;r=1} @self
+Summon_Morgath_The_Unchained:
+  Skills:
+    - summon{mob=Morgath_The_Unchained;a=1;r=1} @self
+
+# TIER 4 - SUMMONS
+Summon_Primordial_Sentinel:
+  Skills:
+    - summon{mob=Primordial_Sentinel;a=1;r=1} @self
+Summon_Ruin_Automaton:
+  Skills:
+    - summon{mob=Ruin_Automaton;a=1;r=1} @self
+Summon_Crucible_Aspect:
+  Skills:
+    - summon{mob=Crucible_Aspect;a=1;r=1} @self
+Summon_Ancient_Dragonsworn_Knight:
+  Skills:
+    - summon{mob=Ancient_Dragonsworn_Knight;a=1;r=1} @self
+Summon_Embered_Colossus:
+  Skills:
+    - summon{mob=Embered_Colossus;a=1;r=1} @self
+Summon_The_First_Sentinel:
+  Skills:
+    - summon{mob=The_First_Sentinel;a=1;r=1} @self

@@ -1,0 +1,40 @@
+# =================================================================
+# NIGHTREIGN DROPTABLES - TIER 1
+# Bảng rơi đồ cho các mob Rare và Unique của Tier 1.
+# =================================================================
+
+Vagrant_Rare_Drops:
+  # Phần thưởng dành cho 3 mob Rare: Fallen Vanguard, Grave Warden, Mad Jester.
+  # Mục tiêu: Cung cấp tài nguyên tốt hơn và một cơ hội nhỏ nhận được vật phẩm hiếm.
+  Conditions: []
+  Drops:
+    # Tiền tệ/Vật liệu cơ bản
+    - exp 25-40 1 1.0 # Luôn rơi kinh nghiệm
+    - Faded_Coin 1-3 0.6 # 60% cơ hội rơi 1-3 Faded Coin
+    - IRON_INGOT 1-2 0.7 # 70% cơ hội rơi 1-2 thỏi sắt
+
+    # Vật phẩm tiêu thụ
+    - BREAD 2-3 0.4 # 40% cơ hội rơi bánh mì
+
+    # Trang bị & Sách phép (phần thưởng hiếm)
+    - CHAINMAIL_CHESTPLATE 1 0.15 # 15% cơ hội rơi giáp xích
+    - EnchantedBook_Protection1 1 0.1 # 10% cơ hội rơi sách Protection 1
+    - ARROW 5-10 0.5 # 50% cơ hội rơi thêm tên
+
+Redrick_Unique_Drops:
+  # Phần thưởng đặc biệt khi đánh bại mob Unique "Redrick, the Deserter".
+  # Mục tiêu: Đảm bảo người chơi nhận được vật phẩm đặc trưng và phần thưởng giá trị.
+  Conditions: []
+  Drops:
+    # Phần thưởng đảm bảo
+    - exp 150-200 1 1.0 # Luôn rơi rất nhiều kinh nghiệm
+    - Tattered_Cape 1 1.0 # Luôn rơi áo choàng đặc trưng
+    - Faded_Coin 5-10 1 1.0 # Luôn rơi một lượng lớn Faded Coin
+
+    # Phần thưởng vũ khí
+    - BOW{enchants=QUICK_CHARGE:1;durability=0.8} 1 1.0 # Luôn rơi cung của hắn (80% độ bền)
+
+    # Phần thưởng hiếm và vật liệu
+    - SPECTRAL_ARROW 5-15 0.8 # 80% cơ hội rơi tên ma thuật
+    - EnchantedBook_Power1 1 0.25 # 25% cơ hội rơi sách Power 1
+    - EMERALD 1-3 0.5 # 50% cơ hội rơi ngọc lục bảo

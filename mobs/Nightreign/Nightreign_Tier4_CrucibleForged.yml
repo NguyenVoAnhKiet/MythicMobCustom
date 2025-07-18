@@ -1,0 +1,170 @@
+# =================================================================
+# NIGHTREIGN MOB PACK - TIER 4: CRUCIBLE-FORGED (COMPLETE)
+# Concept: Những sinh vật cổ đại, được tạo ra từ sức mạnh nguyên thủy,
+# đóng vai trò là những mini-boss hoặc lính gác hùng mạnh.
+# Gồm: 3 Common, 2 Rare, 1 Unique
+# =================================================================
+
+# TIER 4 - COMMON 1/3
+Primordial_Sentinel:
+  MobType: IRON_GOLEM
+  Display: "&6Primordial Sentinel"
+  Health: 750
+  Damage: 20
+  Armor: 22
+  Faction: Crucible_Constructs
+  Options:
+    MovementSpeed: 0.22
+    KnockbackResistance: 0.8
+    FollowRange: 35
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - skill{s=StoneStomp} @PIR{r=4} ~onTimer:180
+    - skill{s=HeavySlam} @target ~onAttack
+    - effect:particles{p=LAVA;a=20} @feet ~onDamaged
+    - sound{s=entity.iron_golem.damage;p=0.7} @self ~onDamaged
+  Drops:
+    - exp 400-450
+    - RAW_IRON_BLOCK 1-2 0.3
+    - ANCIENT_DEBRIS 0-1 0.01
+    - OBSIDIAN 2-5 0.4
+
+# TIER 4 - COMMON 2/3
+Ruin_Automaton:
+  MobType: WITHER_SKELETON
+  Display: "&6Ruin Automaton"
+  Health: 850
+  Damage: 22
+  Armor: 18
+  Faction: Crucible_Constructs
+  Options:
+    MovementSpeed: 0.25
+    KnockbackResistance: 0.7
+    FollowRange: 30
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    Despawn: true
+  Skills:
+    - skill{s=OverheatingVent} @self ~onDamaged <60% 1
+    - skill{s=DrillingThrust} @target ~onAttack
+    - effect:particles{p=SMOKE_LARGE;a=10} @self ~onTimer:40
+  Equipment:
+    - NETHERITE_HOE{display="&6Automaton Drill"}:0
+    - IRON_CHESTPLATE:2
+    - IRON_LEGGINGS:3
+  Drops:
+    - exp 420-480
+    - REDSTONE_BLOCK 1 0.2
+    - COPPER_BLOCK 1-3 0.5
+    - AUTOMATON_CORE{item=HEART_OF_THE_SEA;name="&6Automaton Core"} 1 0.05
+
+# TIER 4 - COMMON 3/3
+Crucible_Aspect:
+  MobType: BLAZE
+  Display: "&6Crucible Aspect"
+  Health: 800
+  Damage: 21
+  Armor: 15
+  Faction: Crucible_Constructs
+  Options:
+    MovementSpeed: 0.26
+    KnockbackResistance: 0.4
+    FollowRange: 40
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - skill{s=SolarFlare} @target ~onAttack
+    - skill{s=MoltenArmor} @self ~onCombat
+    - sound{s=entity.blaze.ambient;p=1.2} @self ~onTimer:80
+    - effect:particles{p=FLAME;a=30;hS=1;vS=1} @self ~onSpawn
+  Drops:
+    - exp 450-500
+    - BLAZE_POWDER 5-10 0.8
+    - MAGMA_CREAM 2-4 0.6
+    - HEART_OF_THE_CRUCIBLE{item=BLAZE_ROD;name="&6Heart of the Crucible"} 1 0.1
+
+# TIER 4 - RARE 1/2
+Ancient_Dragonsworn_Knight:
+  MobType: ZOMBIE
+  Display: "&c&lAncient Dragonsworn Knight"
+  Health: 900
+  Damage: 25
+  Armor: 28
+  Faction: Crucible_Elite
+  Disguise:
+    Type: PLAYER
+    Skin: "DragonswornKnight" # Skin hiệp sĩ rồng cổ đại
+    Player: "&c&lAncient Dragonsworn Knight"
+  Options:
+    MovementSpeed: 0.28
+    KnockbackResistance: 0.85
+    FollowRange: 38
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: true
+  Skills:
+    - skill{s=DragonBreathWave} @target ~onTimer:250
+    - skill{s=ThunderousLeap} @target ~onAttack 0.15
+    - sound{s=entity.ender_dragon.growl;p=0.8} @self ~onCombat
+  Equipment:
+    - NETHERITE_SWORD{display="&cDragontooth Greatsword"}:0
+    - NETHERITE_CHESTPLATE:2
+    - DRAGON_HEAD_ITEM:1
+  Drops:
+    - droptable{d=Crucible_Rare_Drops} 1 1.0
+    - exp 800
+
+# TIER 4 - RARE 2/2
+Embered_Colossus:
+  MobType: SLIME
+  Display: "&c&lEmbered Colossus"
+  Health: 1050
+  Damage: 27
+  Armor: 10
+  Faction: Crucible_Elite
+  Options:
+    MovementSpeed: 0.2
+    KnockbackResistance: 0.95
+    FollowRange: 30
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: true
+    Size: 6
+  Skills:
+    - skill{s=MagmaEruption} @self ~onDamaged <70% 0.3
+    - skill{s=ColossalSlam} @target ~onAttack
+    - effect:particles{p=LAVA;a=50} @self ~onTimer:20
+  Drops:
+    - droptable{d=Crucible_Rare_Drops} 1 1.0
+    - exp 950
+
+# TIER 4 - UNIQUE 1/1
+The_First_Sentinel:
+  MobType: IRON_GOLEM
+  Display: "&6&l&oThe First Sentinel"
+  Health: 1200
+  Damage: 30
+  Armor: 25
+  Faction: Nightreign_Bosses
+  Options:
+    MovementSpeed: 0.2
+    KnockbackResistance: 0.9
+    FollowRange: 50
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: false
+    MaxCombatDistance: 40
+  Mechanics:
+    - Boss
+  Aura:
+    - nearby{d=20;skill=PressureOfAges}
+  Skills:
+    - message{m="&6The earth groans as <mob.name> awakens..."} @p >0 ~onSpawn
+    - skill{s=AncientRoar} @PIR{r=30} ~onCombat
+    - skill{s=GroundSlam_T4} @PIR{r=6} ~onTimer:200
+    - skill{s=Sentinel_Phase2_Empower} @self ~onDamaged <50% 1
+  Drops:
+    - droptable{d=FirstSentinel_Unique_Drops} 1 1.0
+    - exp 2000
+    - command{c="mm broadcast &6The First Sentinel has returned to its slumber."} @p >0 ~onDeath

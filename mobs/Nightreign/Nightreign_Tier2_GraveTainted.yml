@@ -1,0 +1,265 @@
+# =================================================================
+# NIGHTREIGN MOB PACK - TIER 2: GRAVE-TAINTED (COMPLETE)
+# Concept: Kẻ thù bị ô uế bởi hầm mộ, mang theo bệnh dịch và sự thối rữa.
+# Gồm: 6 Common, 3 Rare, 1 Unique
+# =================================================================
+
+# TIER 2 - COMMON 1/6
+Carrion_Hound:
+  MobType: WOLF
+  Display: "&2Carrion Hound"
+  Health: 100
+  Damage: 6
+  Armor: 2
+  Faction: Tainted_Beasts
+  Options:
+    MovementSpeed: 0.35
+    KnockbackResistance: 0.1
+    FollowRange: 40
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - skill{s=TaintedPounce} @target ~onAttack
+    - effect:particles{p=SQUID_INK;a=5;y=1} @self ~onAttack
+    - sound{s=entity.wolf.growl;v=1.2;p=0.8} @self ~onCombat
+  Drops:
+    - exp 20-25
+    - ROTTEN_FLESH 2-4 0.9
+    - BONE 1-2 0.5
+
+# TIER 2 - COMMON 2/6
+Rotting_Undead:
+  MobType: ZOMBIE
+  Display: "&2Rotting Undead"
+  Health: 110
+  Damage: 6
+  Armor: 6
+  Faction: Grave_Tainted
+  Options:
+    MovementSpeed: 0.22
+    KnockbackResistance: 0.2
+    FollowRange: 25
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    Despawn: true
+  Skills:
+    - potion{type=POISON;duration=80;level=0} @target ~onAttack 0.3
+    - effect:particles{p=SLIME;a=10} @self ~onDamaged
+    - sound{s=entity.zombie.infect;p=0.7} @self ~onTimer:120
+  Equipment:
+    - IRON_SHOVEL:0
+    - CHAINMAIL_CHESTPLATE:2
+  Drops:
+    - exp 22-28
+    - EMERALD 0-1 0.04
+    - DIRTY_RAGS{item=PAPER;name="&7Dirty Rags"} 1-2 0.2
+
+# TIER 2 - COMMON 3/6
+Crypt_Dweller:
+  MobType: HUSK
+  Display: "&2Crypt Dweller"
+  Health: 120
+  Damage: 6
+  Armor: 4
+  Faction: Grave_Tainted
+  Options:
+    MovementSpeed: 0.24
+    KnockbackResistance: 0.15
+    FollowRange: 22
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    Despawn: true
+  Skills:
+    - potion{type=HUNGER;duration=100;level=0} @target ~onAttack 0.4
+    - skill{s=BurrowAndAmbush} @self ~onDamaged <70% 0.1
+    - sound{s=block.gravel.break;p=0.8} @self ~onAttack
+  Equipment:
+    - LEATHER_PANTS:3
+  Drops:
+    - exp 25-30
+    - BONE_MEAL 1-3 0.3
+    - SPIDER_EYE 0-1 0.15
+
+# TIER 2 - COMMON 4/6
+Grave_Hag:
+  MobType: WITCH
+  Display: "&2Grave-Hag"
+  Health: 100
+  Damage: 6
+  Armor: 2
+  Faction: Grave_Tainted
+  Options:
+    MovementSpeed: 0.25
+    KnockbackResistance: 0.1
+    FollowRange: 26
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - throwpotion{potion=SLOWNESS;duration=120;level=1} @target ~onTimer:80
+    - throwpotion{potion=POISON;duration=100;level=0} @target ~onTimer:120
+    - sound{s=entity.witch.celebrate;p=0.6} @self ~onDamaged
+  Drops:
+    - exp 35-45
+    - GLASS_BOTTLE 1-2 0.5
+    - RED_MUSHROOM 0-2 0.3
+    - GRAVE_MOSS 1 0.1
+
+# TIER 2 - COMMON 5/6
+Bloodlicker_Stalker:
+  MobType: CAVE_SPIDER
+  Display: "&2Bloodlicker Stalker"
+  Health: 110
+  Damage: 6
+  Armor: 3
+  Faction: Tainted_Beasts
+  Options:
+    MovementSpeed: 0.32
+    KnockbackResistance: 0.0
+    FollowRange: 30
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - skill{s=WebShot} @target ~onTimer:100
+    - potion{type=WEAKNESS;duration=60;level=0} @target ~onAttack 0.2
+    - effect:particles{p=DAMAGE_INDICATOR;a=3} @self ~onAttack
+  Drops:
+    - exp 24-29
+    - STRING 1-3 0.8
+    - FERMENTED_SPIDER_EYE 0-1 0.1
+
+# TIER 2 - COMMON 6/6
+Corpse-Bearer:
+  MobType: ZOMBIE
+  Display: "&2Corpse-Bearer"
+  Health: 120
+  Damage: 6
+  Armor: 8
+  Faction: Grave_Tainted
+  Disguise:
+    Type: PLAYER
+    Skin: "CorpseBearerSteve" # Một skin tùy chỉnh có hình dạng gớm ghiếc
+    Player: "&2Corpse-Bearer"
+  Options:
+    MovementSpeed: 0.21
+    KnockbackResistance: 0.3
+    FollowRange: 20
+    PreventOtherDrops: true
+    Despawn: true
+  Skills:
+    - skill{s=CorpseExplosion} @self ~onDeath
+    - message{m="<mob.name> &7lets out a gurgling moan..."} @p >0 ~onCombat
+    - sound{s=entity.zombie.destroy_egg;p=0.5} @self ~onDamaged
+  Equipment:
+    - DIRT_BLOCK:0
+    - LEATHER_CHESTPLATE:2
+  Drops:
+    - exp 28-35
+    - BONE 2-5 0.6
+    - ROTTEN_FLESH 3-6 0.9
+
+# TIER 2 - RARE 1/3
+Sepulcher_Knight:
+  MobType: HUSK
+  Display: "&aSepulcher Knight"
+  Health: 150
+  Damage: 8
+  Armor: 12
+  Faction: Grave_Tainted_Elite
+  Options:
+    MovementSpeed: 0.24
+    KnockbackResistance: 0.4
+    FollowRange: 28
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    AlwaysShowName: true
+    Despawn: true
+  Skills:
+    - skill{s=GraveStenchAura} @self ~onTimer:100
+    - skill{s=HeavySwing_T2} @target ~onAttack
+    - potion{type=HUNGER;d=120;l=1} @target ~onAttack 0.3
+  Equipment:
+    - STONE_AXE:0
+    - IRON_CHESTPLATE:2
+    - IRON_LEGGINGS:3
+  Drops:
+    - droptable{d=GraveTainted_Rare_Drops} 1 1.0
+    - exp 75
+
+# TIER 2 - RARE 2/3
+Blood-starved_Fiend:
+  MobType: ENDERMITE
+  Display: "&aBlood-starved Fiend"
+  Health: 130
+  Damage: 8
+  Armor: 5
+  Faction: Tainted_Beasts
+  Options:
+    MovementSpeed: 0.4
+    KnockbackResistance: 0.1
+    FollowRange: 35
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: true
+  Skills:
+    - skill{s=BloodRush} @self ~onDamaged
+    - skill{s=LatchingBite} @target ~onAttack 0.2
+    - effect:particles{p=REDSTONE;color=#8B0000;a=20} @self ~onAttack
+  Drops:
+    - droptable{d=GraveTainted_Rare_Drops} 1 1.0
+    - exp 80
+
+# TIER 2 - RARE 3/3
+Corpse-fed_Beast:
+  MobType: RAVAGER
+  Display: "&aCorpse-fed Beast"
+  Health: 140
+  Damage: 8
+  Armor: 10
+  Faction: Tainted_Beasts
+  Options:
+    MovementSpeed: 0.28
+    KnockbackResistance: 0.6
+    FollowRange: 25
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    Despawn: true
+  Skills:
+    - skill{s=GoreCharge} @target ~onTimer:150
+    - skill{s=RoarOfDecay} @PIR{r=10} ~onCombat
+    - sound{s=entity.ravager.roar;p=0.9} @self ~onCombat
+  Drops:
+    - droptable{d=GraveTainted_Rare_Drops} 1 1.0
+    - exp 90
+
+# TIER 2 - UNIQUE 1/1
+Keeper_of_the_Mausoleum:
+  MobType: WITHER_SKELETON
+  Display: "&2&lKeeper of the Mausoleum"
+  Health: 180
+  Damage: 10
+  Armor: 10
+  Faction: Nightreign_Bosses
+  Options:
+    MovementSpeed: 0.25
+    KnockbackResistance: 0.5
+    FollowRange: 30
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    AlwaysShowName: true
+    Despawn: false
+  Mechanics:
+    - Undead
+  Aura:
+    - nearby{d=15;skill=MausoleumDread}
+  Skills:
+    - message{m="&2<mob.name> rises... The dead are restless."} @p >0 ~onSpawn
+    - skill{s=SummonCryptDwellers} @self ~onDamaged <70% 1
+    - skill{s=SoulDrain} @target ~onAttack 0.2
+    - skill{s=WaveOfDespair} @PIR{r=15} ~onTimer:200
+  Equipment:
+    - IRON_HOE{enchants=KNOCKBACK:1}:0
+    - CHAINMAIL_CHESTPLATE:2
+    - Tattered_Royal_Cape{item=BLACK_BANNER}:1
+  Drops:
+    - droptable{d=Mausoleum_Unique_Drops} 1 1.0
+    - exp 350

@@ -1,0 +1,68 @@
+# =================================================================
+# NIGHTREIGN ITEMS - TIER 3
+# Các vật phẩm bị nguyền rủa, các mảnh vỡ sức mạnh, và sách phép cao cấp hơn.
+# =================================================================
+
+# Vật phẩm rơi ra từ mob Common
+Fell_Curse_Shard_Fragment:
+  Id: AMETHYST_SHARD
+  Display: "&cFell-Curse Shard Fragment"
+  Lore:
+    - "&7A fragment radiating a malevolent heat."
+    - "&7It whispers promises of power to those"
+    - "&7willing to listen."
+    - ""
+    - "&8Corrupted to the core."
+  Enchantments:
+    - LUCK:1 # Hiệu ứng phát sáng
+
+# Vật phẩm tùy chỉnh cho DropTable của mob Rare
+Cursed_Effigy:
+  Id: TOTEM_OF_UNDYING
+  Display: "&c&oCursed Effigy"
+  Lore:
+    - "&7A small, twisted figurine bound in"
+    - "&7scraps of cloth. It seems to watch"
+    - "&7you when you aren't looking."
+    - "&7Used in dark rituals."
+
+Abyssal_Tome_Page:
+  Id: PAPER
+  Display: "&5Abyssal Tome Page"
+  Lore:
+    - "&7A torn page from a forbidden book,"
+    - "&7covered in maddening script."
+    - '&o"...to gaze into the abyss is to"'
+    - '&o"find it gazing back..."'
+
+# Vật phẩm đặc biệt của mob Unique "Morgath"
+Morgath_Broken_Chain:
+  Id: CHAIN
+  Display: "&c&lMorgath's Broken Chain"
+  Lore:
+    - "&7A single, massive link from the chain"
+    - "&7that once bound the Unchained."
+    - "&7It is impossibly heavy, both in"
+    - "&7weight and in the rage it contains."
+    - ""
+    - "&8A symbol of absolute, reckless power."
+
+Heart_of_Rage:
+  Id: NETHERITE_SCRAP
+  Display: "&4Heart of Rage"
+  Lore:
+    - "&7The crystallized core of a being"
+    - "&7consumed by unending fury."
+    - "&7It pulses with a furious, burning light."
+    - "&7A key component for forging weapons of rage."
+
+# Sách kỹ năng cấp cao
+EnchantedBook_Sharpness2:
+  Id: ENCHANTED_BOOK
+  Enchantments:
+    - DAMAGE_ALL:2
+
+EnchantedBook_FireProtection2:
+  Id: ENCHANTED_BOOK
+  Enchantments:
+    - PROTECTION_FIRE:2

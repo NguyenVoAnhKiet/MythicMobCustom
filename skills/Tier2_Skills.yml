@@ -1,26 +1,137 @@
-# Tier2_Skills.yml
-# Kỹ năng cho Grave-Tainted Mobs (Tier 2)
+# =================================================================
+# TIER 2: GRAVE-TAINTED SKILLS
+# Kỹ năng tập trung vào hiệu ứng tiêu cực (Debuffs), AoE nhỏ,
+# và các cơ chế đặc trưng của đám sinh vật từ hầm mộ.
+# =================================================================
 
-# Soldier Skills
-GraveTaintedCleave:
-  Cooldown: 15
+# --- KỸ NĂNG CHO MOB COMMON ---
+
+TaintedPounce:
+  Cooldown: 3
   Skills:
-    - damage{amount=6;radius=3} @target
-    - effect:particles{p=sweep_attack;amount=10} @target
-    - sound{s=entity.player.attack.sweep;volume=1} @self
+    - leap{v=10;f=8} @target
+    - damage{a=2} @target
+    - sound{s=entity.wolf.hurt;p=0.8} @self
 
-# Guardian Skills
-GraveTaintedBeam:
+BurrowAndAmbush:
+  Cooldown: 25
+  Skills:
+    # Lặn xuống đất và trở nên vô hình
+    - message{m="<mob.name> &2lặn xuống lòng đất!"} @PIR{r=25}
+    - sound{s=block.gravel.place} @self
+    - effect:particles{p=block_crack;m=DIRT;a=30;y=0.2} @self
+    - potion{type=INVISIBILITY;d=100;l=0} @self
+    - delay 20
+    # Trồi lên ngay dưới chân mục tiêu
+    - teleport{loc=<target.l>} @self
+    - sound{s=block.gravel.break;p=1.2} @self
+    - effect:particles{p=block_crack;m=DIRT;a=50;y=0.2} @self
+    - damage{a=10} @target
+    - potion{type=SLOW;d=80;l=1} @target
+
+WebShot:
+  Cooldown: 6
+  Skills:
+    # Bắn ra một cục tơ nhện
+    - projectile{onTick=WebProjectileTick;onHit=WebProjectileHit;v=12;d=40} @target
+    - sound{s=entity.spider.step;p=1.5} @self
+WebProjectileTick:
+  Skills:
+    - effect:particles{p=SNOWBALL;a=1} @origin
+WebProjectileHit:
+  Skills:
+    - blockmask{b=COBWEB;d=100;r=2} @origin
+    - damage{a=3} @trigger
+
+CorpseExplosion:
+  Skills:
+    # Gây nổ khi chết, làm chậm và gây sát thương
+    - message{m="<mob.name> &7explodes into a pile of gore!"} @PIR{r=20}
+    - effect:particlering{p=SLIME;a=100;r=4} @self
+    - damage{a=12;pk=true} @PIR{r=4}
+    - potion{type=SLOW;d=120;l=1} @PIR{r=4}
+    - sound{s=entity.generic.explode;p=0.8;v=1.5} @self
+
+# --- KỸ NĂNG CHO MOB RARE ---
+
+GraveStenchAura:
+  Skills:
+    # Hào quang gây hiệu ứng buồn nôn cho người chơi ở gần
+    - potion{type=CONFUSION;d=120;l=0;o=true} @PIR{r=8}
+    - effect:particles{p=TOWN_AURA;a=10} @self
+
+HeavySwing_T2:
+  Cooldown: 4
+  Skills:
+    - damage{a=8;pk=true} @target
+    - velocity{x=0;y=0.3;z=0.6} @target # Đẩy lùi mạnh hơn
+    - sound{s=entity.player.attack.strong;p=1.2} @self
+
+BloodRush:
+  Cooldown: 1
+  Skills:
+    # Tăng tốc độ và sát thương tạm thời sau khi nhận sát thương
+    - potion{type=SPEED;d=60;l=1} @self
+    - potion{type=INCREASE_DAMAGE;d=60;l=0} @self
+    - sound{s=entity.endermite.hurt;p=1.5} @self
+
+LatchingBite:
+  Cooldown: 12
+  Skills:
+    # Bám vào mục tiêu và hút máu
+    - message{m="&a<mob.name> latches onto you!"} @target
+    - damage{a=5} @target
+    - heal{a=10} @self
+    - delay 20
+    - damage{a=5} @target
+    - heal{a=10} @self
+
+GoreCharge:
+  Cooldown: 8
+  Skills:
+    - velocity{mode=FORWARD;s=1.5,0.2,1.5;d=40} @self
+    - sound{s=entity.ravager.step} @self
+    - delay 10
+    # Gây sát thương và hất tung mục tiêu khi va chạm
+    - damage{a=15} @EntitiesInBox{x=2;y=2;z=4;f=PLAYER}
+    - velocity{y=0.6} @EntitiesInBox{x=2;y=2;z=4;f=PLAYER}
+
+RoarOfDecay:
   Cooldown: 20
   Skills:
-    - raycast{particle=endrod;range=10;ignorePassable=true} @target
-    - damage{amount=5} @target
-    - effect:particles{p=endrod;amount=20} @target
-    - sound{s=entity.guardian.attack;volume=1} @self
+    - sound{s=entity.ravager.roar;p=0.9} @self
+    # Gầm lên, gây suy yếu cho kẻ địch xung quanh
+    - potion{type=WEAKNESS;d=160;l=0} @PIR{r=10}
+    - effect:particles{p=VILLAGER_ANGRY;a=30} @self
 
-# Shared Skills
-GraveTaintedArmor:
-  Trigger: "DAMAGED"
+# --- KỸ NĂNG CHO MOB UNIQUE ---
+
+MausoleumDread:
   Skills:
-    - potion{type=DAMAGE_RESISTANCE;duration=60;level=1} @self ~0.3
-    - effect:particles{p=barrier;amount=5} @self
+    # Hào quang gây hiệu ứng khô héo từ từ
+    - potion{type=WITHER;d=40;l=0;o=true} @PIR{r=15}
+
+SummonCryptDwellers:
+  Cooldown: 30
+  Skills:
+    - message{m="&2<mob.name> calls for aid from the graves!"} @PIR{r=30}
+    - sound{s=entity.zombie_villager.converted;p=1.1} @self
+    - summon{mob=Crypt_Dweller;a=2;r=3} @self
+
+SoulDrain:
+  Cooldown: 5
+  Skills:
+    - damage{a=5;i=true} @target # Sát thương bỏ qua mọi loại giáp
+    - heal{a=10} @self
+    - effect:particles{p=SOUL;a=20} @target
+    - sound{s=particle.soul_escape} @self
+
+WaveOfDespair:
+  Cooldown: 12
+  Skills:
+    - message{m="&2A wave of despair washes over you!"} @PIR{r=15}
+    - sound{s=entity.elder_guardian.curse;p=1.2} @self
+    # Gây làm chậm và mù tạm thời
+    - potion{type=SLOW;d=100;l=2} @PIR{r=15}
+    - potion{type=BLINDNESS;d=60;l=0} @PIR{r=15}
+    - effect:particlering{p=SQUID_INK;a=150;r=15;y=1} @self
